@@ -21,16 +21,31 @@ class GameScene: SKScene {
         let touchLocation = touch.location(in: self)
         
         // UP
-        if touchLocation.x >= -390 && touchLocation.x <= -9  {
-            if touchLocation.y <= -132 && touchLocation.y >= -515 {
-                print("Horray its a touch")
+        if touchLocation.x >= -309 && touchLocation.x <= -234  {
+            if touchLocation.y <= -287 && touchLocation.y >= -384 {
+                print("up")
             }
         }
         
         // DOWN
+        if touchLocation.x >= -309 && touchLocation.x <= -234  {
+            if touchLocation.y <= -437 && touchLocation.y >= -515 {
+                print("down")
+            }
+        }
         
         // LEFT
+        if touchLocation.x >= -384 && touchLocation.x <= -309  {
+            if touchLocation.y <= -362 && touchLocation.y >= -437 {
+                print("left")
+            }
+        }
         
         // RIGHT
+        if touchLocation.x >= -234 && touchLocation.x <= -159  {
+            if touchLocation.y <= -362 && touchLocation.y >= -437 {
+                print("right")
+            }
+        }
     }
 }
