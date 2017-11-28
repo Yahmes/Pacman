@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B3508BC81FCD9A540085FF30 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3508BC71FCD9A540085FF30 /* GameMenu.swift */; };
+		B3508BCC1FCDA03C0085FF30 /* slkscr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */; };
+		B3508BCE1FCDA0460085FF30 /* slkscrb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */; };
+		B3508BD01FCDA04F0085FF30 /* slkscre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCF1FCDA04F0085FF30 /* slkscre.ttf */; };
+		B3508BD21FCDA05A0085FF30 /* slkscreb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BD11FCDA0590085FF30 /* slkscreb.ttf */; };
 		BC6E3A4D1FC70347004FE3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */; };
 		BC6E3A4F1FC70347004FE3BB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC6E3A4E1FC70347004FE3BB /* GameScene.sks */; };
 		BC6E3A511FC70347004FE3BB /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC6E3A501FC70347004FE3BB /* Actions.sks */; };
@@ -20,6 +24,10 @@
 
 /* Begin PBXFileReference section */
 		B3508BC71FCD9A540085FF30 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
+		B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscr.ttf; sourceTree = "<group>"; };
+		B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscrb.ttf; sourceTree = "<group>"; };
+		B3508BCF1FCDA04F0085FF30 /* slkscre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscre.ttf; sourceTree = "<group>"; };
+		B3508BD11FCDA0590085FF30 /* slkscreb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscreb.ttf; sourceTree = "<group>"; };
 		BC6E3A491FC70347004FE3BB /* Pacman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pacman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC6E3A4E1FC70347004FE3BB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -43,9 +51,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3508BD31FCDA0660085FF30 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		BC6E3A401FC70347004FE3BB = {
 			isa = PBXGroup;
 			children = (
+				B3508BD31FCDA0660085FF30 /* fonts */,
+				B3508BD11FCDA0590085FF30 /* slkscreb.ttf */,
+				B3508BCF1FCDA04F0085FF30 /* slkscre.ttf */,
+				B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */,
+				B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */,
 				BC6E3A4B1FC70347004FE3BB /* Pacman */,
 				BC6E3A4A1FC70347004FE3BB /* Products */,
 			);
@@ -64,10 +84,10 @@
 			children = (
 				BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */,
 				B3508BC71FCD9A540085FF30 /* GameMenu.swift */,
-				BC6E3A4E1FC70347004FE3BB /* GameScene.sks */,
-				BC6E3A501FC70347004FE3BB /* Actions.sks */,
 				BC6E3A521FC70347004FE3BB /* GameScene.swift */,
 				BC6E3A541FC70347004FE3BB /* GameViewController.swift */,
+				BC6E3A4E1FC70347004FE3BB /* GameScene.sks */,
+				BC6E3A501FC70347004FE3BB /* Actions.sks */,
 				BC6E3A561FC70347004FE3BB /* Main.storyboard */,
 				BC6E3A591FC70347004FE3BB /* Assets.xcassets */,
 				BC6E3A5B1FC70347004FE3BB /* LaunchScreen.storyboard */,
@@ -138,7 +158,11 @@
 				BC6E3A581FC70347004FE3BB /* Main.storyboard in Resources */,
 				BC6E3A4F1FC70347004FE3BB /* GameScene.sks in Resources */,
 				BC6E3A5A1FC70347004FE3BB /* Assets.xcassets in Resources */,
+				B3508BCE1FCDA0460085FF30 /* slkscrb.ttf in Resources */,
 				BC6E3A5D1FC70347004FE3BB /* LaunchScreen.storyboard in Resources */,
+				B3508BD21FCDA05A0085FF30 /* slkscreb.ttf in Resources */,
+				B3508BCC1FCDA03C0085FF30 /* slkscr.ttf in Resources */,
+				B3508BD01FCDA04F0085FF30 /* slkscre.ttf in Resources */,
 				BC6E3A511FC70347004FE3BB /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
