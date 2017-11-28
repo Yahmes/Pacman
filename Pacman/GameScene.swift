@@ -12,4 +12,5 @@ import GameplayKit
 class GameScene: SKScene {
     let pacman = SKSpriteNode(imageNamed: "Pacman")
     let ClosedPacman = SKSpriteNode(imageNamed: "ClosedPacman")
+    
 }
