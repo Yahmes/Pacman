@@ -11,8 +11,12 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let pacman = SKSpriteNode(imageNamed: "Pacman")
-    let ClosedPacman = SKSpriteNode(imageNamed: "ClosedPacman")
+    let pinky = SKSpriteNode(imageNamed: "pinky+left")
+    
+    override func didMove(to view: SKView) {
+        pinky.position = CGPoint(x: 0, y: 0)
+        addChild(pinky)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     
@@ -20,32 +24,29 @@ class GameScene: SKScene {
         
         let touchLocation = touch.location(in: self)
         
-        // UP
+        print(touchLocation)
+        
         if touchLocation.x >= -309 && touchLocation.x <= -234  {
+            // UP
             if touchLocation.y <= -287 && touchLocation.y >= -384 {
-                print("up")
+                pinky.position.y += 5
+            }
+            // DOWN
+            else if touchLocation.y <= -437 && touchLocation.y >= -515 {
+                pinky.position.y -= 5
             }
         }
         
-        // DOWN
-        if touchLocation.x >= -309 && touchLocation.x <= -234  {
-            if touchLocation.y <= -437 && touchLocation.y >= -515 {
-                print("down")
+        if touchLocation.y <= -362 && touchLocation.y >= -437 {
+            // LEFT
+            if touchLocation.x >= -384 && touchLocation.x <= -309  {
+                pinky.position.x -= 5
             }
-        }
-        
-        // LEFT
-        if touchLocation.x >= -384 && touchLocation.x <= -309  {
-            if touchLocation.y <= -362 && touchLocation.y >= -437 {
-                print("left")
-            }
-        }
-        
-        // RIGHT
-        if touchLocation.x >= -234 && touchLocation.x <= -159  {
-            if touchLocation.y <= -362 && touchLocation.y >= -437 {
-                print("right")
+            // RIGHT
+            else if touchLocation.x >= -234 && touchLocation.x <= -159  {
+                pinky.position.x += 5
             }
         }
     }
 }
+
