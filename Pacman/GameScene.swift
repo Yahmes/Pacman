@@ -18,6 +18,8 @@ class GameScene: SKScene {
         addChild(pinky)
     }
     
+<<<<<<< HEAD
+=======
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     
         guard let touch = touches.first else { return }
@@ -48,5 +50,6 @@ class GameScene: SKScene {
             }
         }
     }
+>>>>>>> 8c32e6f8946ac25a00c83c5e73d04ce048ff7668
 }
 
