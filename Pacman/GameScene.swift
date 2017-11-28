@@ -50,6 +50,5 @@ class GameScene: SKScene {
             }
         }
     }
->>>>>>> 8c32e6f8946ac25a00c83c5e73d04ce048ff7668
 }
 
