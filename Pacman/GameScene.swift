@@ -11,7 +11,6 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-<<<<<<< HEAD
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false
@@ -28,33 +27,26 @@ class GameScene: SKScene {
         pinkyUp.position = CGPoint(x: 0, y: 0)
         pinkyUp.xScale = 0.5
         pinkyUp.yScale = 0.5
-        pinkyDown.position = CGPoint(x: 0, y: 0)
+        pinkyDown.position = pinkyUp.position
         pinkyDown.xScale = 0.5
         pinkyDown.yScale = 0.5
-        pinkyLeft.position = CGPoint(x: 0, y: 0)
+        pinkyLeft.position = pinkyUp.position
         pinkyLeft.xScale = 0.5
         pinkyLeft.yScale = 0.5
-        pinkyRight.position = CGPoint(x: 0, y: 0)
+        pinkyRight.position = pinkyUp.position
         pinkyRight.xScale = 0.5
         pinkyRight.yScale = 0.5
         if up == true {
-            
+        
         }
         if down == true {
-=======
+            
+        }
+    }
+
     let pacman = SKSpriteNode(imageNamed: "Pacman")
     let ClosedPacman = SKSpriteNode(imageNamed: "ClosedPacman")
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
-        guard let touch = touches.first else { return }
->>>>>>> 34257b44c2cc84a03ab81af4627f8a0eb7f77848
-        
-        }
-        
-<<<<<<< HEAD
-        
-    }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touch = touches.first!.location(in: self)
@@ -76,12 +68,12 @@ class GameScene: SKScene {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384 {
-                    pinky.position.y += 5
+                    pinkyUp.position.y += 5
                     up = true
                 }
-                    // DOWN
+                // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
-                    pinky.position.y -= 5
+                    pinkyUp.position.y -= 5
                     down = true
                 }
             }
@@ -89,41 +81,14 @@ class GameScene: SKScene {
             if touch.y <= -362 && touch.y >= -437 {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
-                    pinky.position.x -= 5
+                    pinkyUp.position.x -= 5
                     left = true
                 }
-                    // RIGHT
+                // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
-                    pinky.position.x += 5
+                    pinkyUp.position.x += 5
                     right = true
                 }
-=======
-        // UP
-        if touchLocation.x >= -309 && touchLocation.x <= -234  {
-            if touchLocation.y <= -287 && touchLocation.y >= -384 {
-                print("up")
-            }
-        }
-        
-        // DOWN
-        if touchLocation.x >= -309 && touchLocation.x <= -234  {
-            if touchLocation.y <= -437 && touchLocation.y >= -515 {
-                print("down")
-            }
-        }
-        
-        // LEFT
-        if touchLocation.x >= -384 && touchLocation.x <= -309  {
-            if touchLocation.y <= -362 && touchLocation.y >= -437 {
-                print("left")
-            }
-        }
-        
-        // RIGHT
-        if touchLocation.x >= -234 && touchLocation.x <= -159  {
-            if touchLocation.y <= -362 && touchLocation.y >= -437 {
-                print("right")
->>>>>>> 34257b44c2cc84a03ab81af4627f8a0eb7f77848
             }
         }
     }
