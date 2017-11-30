@@ -23,6 +23,7 @@ class GameScene: SKScene {
     let pinkyDown = SKSpriteNode(imageNamed: "pinky+down")
     let pinkyLeft = SKSpriteNode(imageNamed: "pinky+left")
     let pinkyRight = SKSpriteNode(imageNamed: "pinky+right")
+    
     override func didMove(to view: SKView) {
         pinkyUp.position = CGPoint(x: 0, y: 0)
         pinkyUp.xScale = 0.5
@@ -36,30 +37,43 @@ class GameScene: SKScene {
         pinkyRight.position = pinkyUp.position
         pinkyRight.xScale = 0.5
         pinkyRight.yScale = 0.5
-        if up == true {
-        
-        }
-        if down == true {
-            
-        }
     }
-
-    let pacman = SKSpriteNode(imageNamed: "Pacman")
-    let ClosedPacman = SKSpriteNode(imageNamed: "ClosedPacman")
-    
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("idiot")
         touch = touches.first!.location(in: self)
         isTouched = true
         
+        if up == true {
+            pinkyDown.removeFromParent()
+            pinkyLeft.removeFromParent()
+            pinkyRight.removeFromParent()
+            addChild(pinkyUp)
+        }
+        if down == true {
+            pinkyUp.removeFromParent()
+            pinkyLeft.removeFromParent()
+            pinkyRight.removeFromParent()
+            addChild(pinkyDown)
+        }
+        if left == true{
+            pinkyUp.removeFromParent()
+            pinkyDown.removeFromParent()
+            pinkyRight.removeFromParent()
+            addChild(pinkyLeft)
+        }
+        if right == true {
+            pinkyUp.removeFromParent()
+            pinkyDown.removeFromParent()
+            pinkyLeft.removeFromParent()
+            addChild(pinkyRight)
+        }
+
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("here")
         isTouched = false
-        up = false
-        down = false
-        left = false
-        right = false
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -70,11 +84,18 @@ class GameScene: SKScene {
                 if touch.y <= -287 && touch.y >= -384 {
                     pinkyUp.position.y += 5
                     up = true
+                    down = false
+                    left = false
+                    right = false
+                    print("up")
                 }
                 // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
                     pinkyUp.position.y -= 5
                     down = true
+                    up = false
+                    left = false
+                    right = false
                 }
             }
             
@@ -83,11 +104,17 @@ class GameScene: SKScene {
                 if touch.x >= -384 && touch.x <= -309  {
                     pinkyUp.position.x -= 5
                     left = true
+                    up = false
+                    down = false
+                    right = false
                 }
                 // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
                     pinkyUp.position.x += 5
                     right = true
+                    up = false
+                    down = false
+                    left = false
                 }
             }
         }
