@@ -1,7 +1,7 @@
 //
 //  GameScene.swift
 //  Pacman
-//
+//  Most of work done by: Horge
 //  Created by James Devries on 2017-11-23.
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
 //
@@ -11,45 +11,84 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    let pinky = SKSpriteNode(imageNamed: "pinky+left")
+    var touch:CGPoint = CGPoint(x: 0, y:0)
+    var i:Int = 0
+    var isTouched:Bool = false
+    var up:Bool = false
+    var down:Bool = false
+    var left:Bool = true
+    var right:Bool = false
     
+    let pinkyUp = SKSpriteNode(imageNamed: "pinky+up")
+    let pinkyDown = SKSpriteNode(imageNamed: "pinky+down")
+    let pinkyLeft = SKSpriteNode(imageNamed: "pinky+left")
+    let pinkyRight = SKSpriteNode(imageNamed: "pinky+right")
     override func didMove(to view: SKView) {
-        pinky.position = CGPoint(x: 0, y: 0)
-        addChild(pinky)
+        pinkyUp.position = CGPoint(x: 0, y: 0)
+        pinkyUp.xScale = 0.5
+        pinkyUp.yScale = 0.5
+        pinkyDown.position = CGPoint(x: 0, y: 0)
+        pinkyDown.xScale = 0.5
+        pinkyDown.yScale = 0.5
+        pinkyLeft.position = CGPoint(x: 0, y: 0)
+        pinkyLeft.xScale = 0.5
+        pinkyLeft.yScale = 0.5
+        pinkyRight.position = CGPoint(x: 0, y: 0)
+        pinkyRight.xScale = 0.5
+        pinkyRight.yScale = 0.5
+        if up == true {
+            
+        }
+        if down == true {
+        
+        }
+        
+        
     }
-    
-<<<<<<< HEAD
-=======
+   
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touch = touches.first!.location(in: self)
+        isTouched = true
+        
+    }
     
-        guard let touch = touches.first else { return }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        isTouched = false
+        up = false
+        down = false
+        left = false
+        right = false
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
         
-        let touchLocation = touch.location(in: self)
-        
-        print(touchLocation)
-        
-        if touchLocation.x >= -309 && touchLocation.x <= -234  {
-            // UP
-            if touchLocation.y <= -287 && touchLocation.y >= -384 {
-                pinky.position.y += 5
+        if isTouched == true {
+            if touch.x >= -309 && touch.x <= -234  {
+                // UP
+                if touch.y <= -287 && touch.y >= -384 {
+                    pinky.position.y += 5
+                    up = true
+                }
+                    // DOWN
+                else if touch.y <= -437 && touch.y >= -515 {
+                    pinky.position.y -= 5
+                    down = true
+                }
             }
-            // DOWN
-            else if touchLocation.y <= -437 && touchLocation.y >= -515 {
-                pinky.position.y -= 5
-            }
-        }
-        
-        if touchLocation.y <= -362 && touchLocation.y >= -437 {
-            // LEFT
-            if touchLocation.x >= -384 && touchLocation.x <= -309  {
-                pinky.position.x -= 5
-            }
-            // RIGHT
-            else if touchLocation.x >= -234 && touchLocation.x <= -159  {
-                pinky.position.x += 5
+            
+            if touch.y <= -362 && touch.y >= -437 {
+                // LEFT
+                if touch.x >= -384 && touch.x <= -309  {
+                    pinky.position.x -= 5
+                    left = true
+                }
+                    // RIGHT
+                else if touch.x >= -234 && touch.x <= -159  {
+                    pinky.position.x += 5
+                    right = true
+                }
             }
         }
     }
->>>>>>> 8c32e6f8946ac25a00c83c5e73d04ce048ff7668
 }
 
