@@ -22,25 +22,27 @@ class GameScene: SKScene {
         pinky.xScale = 0.5
         pinky.yScale = 0.5
         addChild(pinky)
+        print("did move")
     }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touch = touches.first!.location(in: self)
         isTouched = true
+        print("began")
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isTouched = false
+        print("ended")
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384 {
                     pinky = SKSpriteNode(imageNamed: "pinky+up")
-                    pinky.position.y += 5
+                    pinky.position.y = pinky.position.y + 5
                     print("up")
                 }
                 // DOWN
