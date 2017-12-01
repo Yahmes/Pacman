@@ -54,6 +54,10 @@
 		B3508BD31FCDA0660085FF30 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B3508BD11FCDA0590085FF30 /* slkscreb.ttf */,
+				B3508BCF1FCDA04F0085FF30 /* slkscre.ttf */,
+				B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */,
+				B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -62,10 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				B3508BD31FCDA0660085FF30 /* fonts */,
-				B3508BD11FCDA0590085FF30 /* slkscreb.ttf */,
-				B3508BCF1FCDA04F0085FF30 /* slkscre.ttf */,
-				B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */,
-				B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */,
 				BC6E3A4B1FC70347004FE3BB /* Pacman */,
 				BC6E3A4A1FC70347004FE3BB /* Products */,
 			);
