@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4AE0D1FD19CC300C000E3 /* Map.swift */; };
 		B3508BC81FCD9A540085FF30 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3508BC71FCD9A540085FF30 /* GameMenu.swift */; };
 		B3508BCC1FCDA03C0085FF30 /* slkscr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */; };
 		B3508BCE1FCDA0460085FF30 /* slkscrb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69C4AE0D1FD19CC300C000E3 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B3508BC71FCD9A540085FF30 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscr.ttf; sourceTree = "<group>"; };
 		B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscrb.ttf; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				BC6E3A591FC70347004FE3BB /* Assets.xcassets */,
 				BC6E3A5B1FC70347004FE3BB /* LaunchScreen.storyboard */,
 				BC6E3A5E1FC70347004FE3BB /* Info.plist */,
+				69C4AE0D1FD19CC300C000E3 /* Map.swift */,
 			);
 			path = Pacman;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */,
 				B3508BC81FCD9A540085FF30 /* GameMenu.swift in Sources */,
 				BC6E3A531FC70347004FE3BB /* GameScene.swift in Sources */,
 				BC6E3A551FC70347004FE3BB /* GameViewController.swift in Sources */,
