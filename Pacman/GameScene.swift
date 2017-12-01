@@ -14,65 +14,22 @@ class GameScene: SKScene {
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false
-    var up:Bool = false
-    var down:Bool = false
-    var left:Bool = true
-    var right:Bool = false
     
-    let pinkyUp = SKSpriteNode(imageNamed: "pinky+up")
-    let pinkyDown = SKSpriteNode(imageNamed: "pinky+down")
-    let pinkyLeft = SKSpriteNode(imageNamed: "pinky+left")
-    let pinkyRight = SKSpriteNode(imageNamed: "pinky+right")
+    var pinky = SKSpriteNode(imageNamed: "pinky+left")
     
     override func didMove(to view: SKView) {
-        pinkyUp.position = CGPoint(x: 0, y: 0)
-        pinkyUp.xScale = 0.5
-        pinkyUp.yScale = 0.5
-        pinkyDown.position = pinkyUp.position
-        pinkyDown.xScale = 0.5
-        pinkyDown.yScale = 0.5
-        pinkyLeft.position = pinkyUp.position
-        pinkyLeft.xScale = 0.5
-        pinkyLeft.yScale = 0.5
-        pinkyRight.position = pinkyUp.position
-        pinkyRight.xScale = 0.5
-        pinkyRight.yScale = 0.5
+        pinky.position = CGPoint(x: 0, y: 0)
+        pinky.xScale = 0.5
+        pinky.yScale = 0.5
+        addChild(pinky)
     }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("idiot")
         touch = touches.first!.location(in: self)
         isTouched = true
-        
-        if up == true {
-            pinkyDown.removeFromParent()
-            pinkyLeft.removeFromParent()
-            pinkyRight.removeFromParent()
-            addChild(pinkyUp)
-        }
-        if down == true {
-            pinkyUp.removeFromParent()
-            pinkyLeft.removeFromParent()
-            pinkyRight.removeFromParent()
-            addChild(pinkyDown)
-        }
-        if left == true{
-            pinkyUp.removeFromParent()
-            pinkyDown.removeFromParent()
-            pinkyRight.removeFromParent()
-            addChild(pinkyLeft)
-        }
-        if right == true {
-            pinkyUp.removeFromParent()
-            pinkyDown.removeFromParent()
-            pinkyLeft.removeFromParent()
-            addChild(pinkyRight)
-        }
-
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("here")
         isTouched = false
     }
     
@@ -82,39 +39,30 @@ class GameScene: SKScene {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384 {
-                    pinkyUp.position.y += 5
-                    up = true
-                    down = false
-                    left = false
-                    right = false
+                    pinky = SKSpriteNode(imageNamed: "pinky+up")
+                    pinky.position.y += 5
                     print("up")
                 }
                 // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
-                    pinkyUp.position.y -= 5
-                    down = true
-                    up = false
-                    left = false
-                    right = false
+                    pinky = SKSpriteNode(imageNamed: "pinky+down")
+                    pinky.position.y -= 5
+                    print("down")
                 }
             }
             
             if touch.y <= -362 && touch.y >= -437 {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
-                    pinkyUp.position.x -= 5
-                    left = true
-                    up = false
-                    down = false
-                    right = false
+                    pinky = SKSpriteNode(imageNamed: "pinky+left")
+                    pinky.position.x -= 5
+                    print("left")
                 }
                 // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
-                    pinkyUp.position.x += 5
-                    right = true
-                    up = false
-                    down = false
-                    left = false
+                    pinky = SKSpriteNode(imageNamed: "pinky+right")
+                    pinky.position.x += 5
+                    print("right")
                 }
             }
         }
