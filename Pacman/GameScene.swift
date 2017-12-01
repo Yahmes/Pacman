@@ -20,13 +20,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var isTouched:Bool = false
     
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
-    var Pacman = SKSpriteNode(imageNamed: "Pacman")
+    var pacman = SKSpriteNode(imageNamed: "pacman")
     override func didMove(to view: SKView) {
         pinky.position = CGPoint(x: 0, y: 0)
         pinky.xScale = 0.5
         pinky.yScale = 0.5
         addChild(pinky)
-        //print("did move")
+        pacman.position = CGPoint(x: 250, y: 250)
+        pacman.xScale = 0.5
+        pacman.yScale = 0.5
+        addChild(pinky)
     }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -74,7 +77,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     func projectileDidCollideWithMonster(pacman: SKSpriteNode, monster: SKSpriteNode) {
-     
+        pacman.removeFromParent()
+        monster.removeFromParent()
         
     }
     func didBegin(_ contact: SKPhysicsContact) {
@@ -87,7 +91,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
-        }3
+        }
         
         // 2
         if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
