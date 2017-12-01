@@ -22,7 +22,7 @@ class GameScene: SKScene {
         pinky.xScale = 0.5
         pinky.yScale = 0.5
         addChild(pinky)
-        print("did move")
+        //print("did move")
     }
    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -40,14 +40,14 @@ class GameScene: SKScene {
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
-                if touch.y <= -287 && touch.y >= -384 {
-                    pinky = SKSpriteNode(imageNamed: "pinky+up")
-                    pinky.position.y = pinky.position.y + 5
+                if touch.y <= -287 && touch.y >= -384{
+                    pinky.texture = SKTexture(imageNamed: "pinky+up")
+                    pinky.position.y +=  5
                     print("up")
                 }
                 // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
-                    pinky = SKSpriteNode(imageNamed: "pinky+down")
+                    pinky.texture = SKTexture(imageNamed: "pinky+down")
                     pinky.position.y -= 5
                     print("down")
                 }
@@ -56,13 +56,13 @@ class GameScene: SKScene {
             if touch.y <= -362 && touch.y >= -437 {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
-                    pinky = SKSpriteNode(imageNamed: "pinky+left")
+                    pinky.texture = SKTexture(imageNamed: "pinky+left")
                     pinky.position.x -= 5
                     print("left")
                 }
                 // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
-                    pinky = SKSpriteNode(imageNamed: "pinky+right")
+                    pinky.texture = SKTexture(imageNamed: "pinky+right")
                     pinky.position.x += 5
                     print("right")
                 }
