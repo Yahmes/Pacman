@@ -1,7 +1,6 @@
 //
 //  GameScene.swift
 //  Pacman
-//  Most of work done by: Horge
 //  Created by James Devries on 2017-11-23.
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
 //
@@ -9,14 +8,14 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false
     
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
-    
+    var Pacman = SKSpriteNode(imageNamed: "Pacman")
     override func didMove(to view: SKView) {
         pinky.position = CGPoint(x: 0, y: 0)
         pinky.xScale = 0.5
@@ -68,5 +67,29 @@ class GameScene: SKScene {
                 }
             }
         }
+    }
+    func projectileDidCollideWithMonster(projectile: SKSpriteNode, monster: SKSpriteNode) {
+     
+        
+    }
+    func didBegin(_ contact: SKPhysicsContact) {
+        // 1
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        // 2
+        if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Projectile != 0)) {
+            if let monster = firstBody.node as? SKSpriteNode, let
+                projectile = secondBody.node as? SKSpriteNode {
+                projectileDidCollideWithMonster(projectile: pinky, monster: Pacman)
+            }
     }
 }
