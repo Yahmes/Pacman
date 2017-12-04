@@ -24,8 +24,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         pinky.position = CGPoint(x: 0, y: 0)
-        pinky.xScale = 0.5
-        pinky.yScale = 0.5
+        pinky.xScale = 0.3
+        pinky.yScale = 0.3
         addChild(pinky)
         pacman.position = CGPoint(x: 250, y: 250)
         pacman.xScale = 0.5
@@ -50,11 +50,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if touch.y <= -287 && touch.y >= -384{
                     pinky.texture = SKTexture(imageNamed: "pinky+up")
                     pinky.position.y +=  5
+                    print(pinky.position)
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
                     pinky.texture = SKTexture(imageNamed: "pinky+down")
                     pinky.position.y -= 5
+                    print(pinky.position)
                 }
             }
             
@@ -63,16 +65,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if touch.x >= -384 && touch.x <= -309  {
                     pinky.texture = SKTexture(imageNamed: "pinky+left")
                     pinky.position.x -= 5
+                    print(pinky.position)
                 }
                     // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
                     pinky.texture = SKTexture(imageNamed: "pinky+right")
                     pinky.position.x += 5
+                    print(pinky.position)
                 }
             }
         }
     }
-    /*
+    
     func projectileDidCollideWithMonster(pacman: SKSpriteNode, monster: SKSpriteNode) {
         pacman.removeFromParent()
         monster.removeFromParent()
@@ -98,5 +102,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
- */
 }
