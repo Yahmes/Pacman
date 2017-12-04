@@ -72,8 +72,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-    /*
+    
     func projectileDidCollideWithMonster(pacman: SKSpriteNode, monster: SKSpriteNode) {
+        print("hit")
         pacman.removeFromParent()
         monster.removeFromParent()
         
@@ -93,10 +94,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // 2
         if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Pacman != 0)) {
-            if let monster = firstBody.node as? SKSpriteNode, let pacman = secondBody.node as? SKSpriteNode {
+            if let pacman = firstBody.node as? SKSpriteNode, let pinky = secondBody.node as? SKSpriteNode {
                 projectileDidCollideWithMonster(pacman: pacman, monster: pinky)
             }
         }
     }
- */
 }
