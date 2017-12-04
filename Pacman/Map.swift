@@ -14,8 +14,8 @@ class MapNode: SKSpriteNode {
     class func Map() -> MapNode {
         let sprite = MapNode(imageNamed: "pacman maze")
         
-        sprite.xScale = 0.25
-        sprite.yScale = 0.25
+        sprite.xScale = 0.3
+        sprite.yScale = 0.3
         sprite.position = CGPoint(x: 0, y: 0)
         
         sprite.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "pacman maze"), size: sprite.size)
