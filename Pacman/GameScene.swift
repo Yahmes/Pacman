@@ -7,13 +7,7 @@
 
 import SpriteKit
 import GameplayKit
-struct PhysicsCategory {
-    static let None      : UInt32 = 0
-    static let All       : UInt32 = UInt32.max
-    static let Monster   : UInt32 = 0b1       // 1
-    static let Pacman: UInt32 = 0b10      // 2
-}
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene{
     
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
@@ -77,30 +71,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func projectileDidCollideWithMonster(pacman: SKSpriteNode, monster: SKSpriteNode) {
-        print("hit")
-        pacman.removeFromParent()
-        monster.removeFromParent()
-        
+    
     }
-    func didBegin(_ contact: SKPhysicsContact) {
-        // 1
-        var firstBody: SKPhysicsBody
-        var secondBody: SKPhysicsBody
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        } else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-        
-        // 2
-        if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Pacman != 0)) {
-            if let pacman = firstBody.node as? SKSpriteNode, let pinky = secondBody.node as? SKSpriteNode {
-                projectileDidCollideWithMonster(pacman: pacman, monster: pinky)
-            }
-        }
-    }
-}
