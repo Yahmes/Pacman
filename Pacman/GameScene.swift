@@ -14,7 +14,7 @@ class GameScene: SKScene{
     var isTouched:Bool = false
     
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
-    var pacman = SKSpriteNode(imageNamed: "pacman")
+    var pacman = SKSpriteNode(imageNamed: "pacman left")
     
     override func didMove(to view: SKView) {
         pinky.position = CGPoint(x: 0, y: 0)
@@ -22,8 +22,8 @@ class GameScene: SKScene{
         pinky.yScale = 0.3
         addChild(pinky)
         pacman.position = CGPoint(x: 250, y: 250)
-        pacman.xScale = 0.5
-        pacman.yScale = 0.5
+        pacman.xScale = 0.325
+        pacman.yScale = 0.325
         addChild(pacman)
         addChild(MapNode.Map())
     }
@@ -42,34 +42,34 @@ class GameScene: SKScene{
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
-                    pinky.texture = SKTexture(imageNamed: "pinky+up")
-                    pinky.position.y +=  5
-                    print(pinky.position)
+                    pacman.texture = SKTexture(imageNamed: "pacman up")
+                    pacman.position.y +=  5
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
-                    pinky.texture = SKTexture(imageNamed: "pinky+down")
-                    pinky.position.y -= 5
-                    print(pinky.position)
+                    pacman.texture = SKTexture(imageNamed: "pacman down")
+                    pacman.position.y -= 5
                 }
             }
             
             if touch.y <= -362 && touch.y >= -437 {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
-                    pinky.texture = SKTexture(imageNamed: "pinky+left")
-                    pinky.position.x -= 5
-                    print(pinky.position)
+                    pacman.texture = SKTexture(imageNamed: "pacman left")
+                    pacman.position.x -= 5
                 }
                     // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
-                    pinky.texture = SKTexture(imageNamed: "pinky+right")
-                    pinky.position.x += 5
-                    print(pinky.position)
+                    pacman.texture = SKTexture(imageNamed: "pacman right")
+                    pacman.position.x += 5
                 }
             }
         }
     }
+<<<<<<< HEAD
     
     
     }
+=======
+}
+>>>>>>> 95b6dfe921ab40819556d1f41a6422dd965eb37c
