@@ -7,13 +7,7 @@
 
 import SpriteKit
 import GameplayKit
-struct PhysicsCategory {
-    static let None      : UInt32 = 0
-    static let All       : UInt32 = UInt32.max
-    static let Monster   : UInt32 = 0b1       // 1
-    static let Pacman: UInt32 = 0b10      // 2
-}
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene{
     
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
@@ -72,4 +66,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+<<<<<<< HEAD
+    
+    
+    }
+=======
 }
+>>>>>>> 95b6dfe921ab40819556d1f41a6422dd965eb37c
