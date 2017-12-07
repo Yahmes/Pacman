@@ -41,7 +41,7 @@ func GridDetection(coordinates: CGPoint) -> CGPoint {
         YCounter += 1
     }
     
-    tile = CGPoint(x: XValue, y: YValue)
+    tile = CGPoint(x: XValue, y: YValue+3)
     
     return tile
 }

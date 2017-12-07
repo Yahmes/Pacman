@@ -34,7 +34,7 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isTouched = false
+        //isTouched = false
     }
     
     override func update(_ currentTime: TimeInterval) {
