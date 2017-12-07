@@ -33,15 +33,15 @@ func GridDetection(coordinates: CGPoint) -> CGPoint {
         XCounter += 1
     }
     while YCounter != 30 {
-        YLowerLimit = CGFloat(-384 + (gridY * YCounter))
-        YUpperLimit = CGFloat(-384 + (gridY * (YCounter + 1)))
+        YLowerLimit = CGFloat(512 - (gridY * YCounter))
+        YUpperLimit = CGFloat(512 -  (gridY * (YCounter + 1)))
         if coordinates.y > YLowerLimit && coordinates.y < YUpperLimit {
             YValue = YCounter
         }
         YCounter += 1
     }
     
-    tile = CGPoint(x: XValue, y: YValue+3)
+    tile = CGPoint(x: XValue, y: YValue)
     
     return tile
 }
