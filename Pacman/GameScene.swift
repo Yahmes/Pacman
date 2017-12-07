@@ -12,6 +12,8 @@ class GameScene: SKScene {
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false
+    let gridX: CGFloat = 27.4285714286
+    let gridY: CGFloat = 27.4285714284
     
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
     var pacman = SKSpriteNode(imageNamed: "pacman left")
@@ -42,358 +44,29 @@ class GameScene: SKScene {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
-                    if pacman.position.y <= -300  && pacman.position.y >= -215 {
-                        if pacman.position.x == -345{
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
+                    if GridDetection(coordinates: CGPoint(x: pacman.position.x ,y: pacman.position.y += gridY / 3)) != CGPoint(x: ) {
+                        
                     }
-                    if pacman.position.y <= -215  && pacman.position.y >= -135 {
-                        if pacman.position.x == -290 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == -120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 205 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 290 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
-                    if pacman.position.y <= -215  && pacman.position.y >= 470 {
-                        if pacman.position.x == -205 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 205 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
-                    if pacman.position.y <= -135  && pacman.position.y >= -55 {
-                        if pacman.position.x == -345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
-                    if pacman.position.y <= -55  && pacman.position.y >= 195 {
-                        if pacman.position.x == -120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
-                    if pacman.position.y <= 195  && pacman.position.y >= 275 {
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
-                    if pacman.position.y <= 275  && pacman.position.y >= 360 {
-                        if pacman.position.x == -120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
-                    if pacman.position.y <= 275  && pacman.position.y >= 470 {
-                        if pacman.position.x == -345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
-                    if pacman.position.y <= 360  && pacman.position.y >= 470 {
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman up")
-                            pacman.position.y +=  5
-                        }
-                    }
+                    pacman.texture = SKTexture(imageNamed: "pacman up")
+                    pacman.position.y += gridY / 3
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
-                    if pacman.position.y <= -300  && pacman.position.y >= -215 {
-                        if pacman.position.x == -345{
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= -215  && pacman.position.y >= -135 {
-                        if pacman.position.x == -290 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == -120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 205 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 290 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= -215  && pacman.position.y >= 470 {
-                        if pacman.position.x == -205 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 205 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= -135  && pacman.position.y >= -55 {
-                        if pacman.position.x == -345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= -55  && pacman.position.y >= 195 {
-                        if pacman.position.x == -120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= 195  && pacman.position.y >= 275 {
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= 275  && pacman.position.y >= 360 {
-                        if pacman.position.x == -120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 120 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= 275  && pacman.position.y >= 470 {
-                        if pacman.position.x == -345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 345 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
-                    if pacman.position.y <= 360  && pacman.position.y >= 470 {
-                        if pacman.position.x == -40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                        if pacman.position.x == 40 {
-                            pacman.texture = SKTexture(imageNamed: "pacman down")
-                            pacman.position.y -=  5
-                        }
-                    }
+                    pacman.texture = SKTexture(imageNamed: "pacman down")
+                    pacman.position.y -=  gridY / 3
                 }
             }
             
             if touch.y <= -362 && touch.y >= -437 {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
-                    if pacman.position.x <= 345  && pacman.position.x >= -345 {
-                        if pacman.position.y == -300 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 205 {
-                        if pacman.position.y == -215 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 290 {
-                        if pacman.position.y == -135 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 40 {
-                        if pacman.position.y == -55 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 40 {
-                        if pacman.position.y == -55 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 120 {
-                        if pacman.position.y == 110 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 40 {
-                        if pacman.position.y == -55 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 205 {
-                        if pacman.position.y == 275 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 40 {
-                        if pacman.position.y == 470 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= -345 {
-                        if pacman.position.y == 360 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 345  && pacman.position.x >= 40 {
-                        if pacman.position.y == -55 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 120  && pacman.position.x >= 40 {
-                        if pacman.position.y == -215 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= 205  && pacman.position.x >= -205 {
-                        if pacman.position.y == -135 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= -40  && pacman.position.x >= -120 {
-                        if pacman.position.y == -215 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= -205  && pacman.position.x >= -345 {
-                        if pacman.position.y == -215 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= -40  && pacman.position.x >= -345 {
-                        if pacman.position.y == -55 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
-                    if pacman.position.x <= -290  && pacman.position.x >= -345 {
-                        if pacman.position.y == -135 {
-                            pacman.texture = SKTexture(imageNamed: "pacman left")
-                            pacman.position.x -= 5
-                        }
-                    }
+                    pacman.texture = SKTexture(imageNamed: "pacman left")
+                    pacman.position.x -= gridX / 3
                 }
                     // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
                     pacman.texture = SKTexture(imageNamed: "pacman right")
-                    pacman.position.x += 5
+                    pacman.position.x += gridX / 3
                 }
             }
         }
