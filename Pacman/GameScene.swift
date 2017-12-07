@@ -25,7 +25,7 @@ class GameScene: SKScene {
         pinky.xScale = 0.3
         pinky.yScale = 0.3
         addChild(pinky)
-        pacman.position = CenterOfTile(tile: CGPoint(x: 27, y: 30))
+        pacman.position = CenterOfTile(tile: CGPoint(x: 14, y: 23))
         pacman.xScale = 0.325
         pacman.yScale = 0.325
         addChild(pacman)
@@ -47,12 +47,12 @@ class GameScene: SKScene {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
                     tempY = pacman.position.y + gridY / 3
+                    //print (tempY)
+                    //print (GridDetectionY(Y: tempY))
                     if GridDetectionY(Y: tempY) != 0 {
                         pacman.texture = SKTexture(imageNamed: "pacman up")
                         pacman.position.y += gridY / 3
                     }
-                    pacman.texture = SKTexture(imageNamed: "pacman up")
-                    pacman.position.y += gridY / 3
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
