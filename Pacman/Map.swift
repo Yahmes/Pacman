@@ -16,7 +16,7 @@ class MapNode: SKSpriteNode {
         
         sprite.xScale = 0.3918367347
         sprite.yScale = 0.3918367347
-        sprite.position = CGPoint(x: 0, y: 85)
+        sprite.position = CGPoint(x: 0, y: 86.857142855)
         
         sprite.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "pacman maze"), size: sprite.size)
         sprite.physicsBody?.usesPreciseCollisionDetection = true

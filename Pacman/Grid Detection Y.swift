@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-func GridDetectionY(X: CGFloat) -> CGFloat {
+func GridDetectionY(Y: CGFloat) -> CGFloat {
     
     let gridY: CGFloat = 27.4285714284
     var YUpperLimit:CGFloat = 0
@@ -18,10 +18,10 @@ func GridDetectionY(X: CGFloat) -> CGFloat {
     var YCounter:CGFloat = 0
     var YValue:CGFloat = 0
     
-    while YCounter != 27 {
-        YLowerLimit = CGFloat(512 + (gridY * YCounter))
-        YUpperLimit = CGFloat(512 + (gridY * (YCounter + 1)))
-        if X > YLowerLimit && X < YUpperLimit {
+    while YCounter != 30 {
+        YLowerLimit = CGFloat(512 - (gridY * YCounter))
+        YUpperLimit = CGFloat(512 - (gridY * (YCounter + 1)))
+        if Y > YLowerLimit && Y < YUpperLimit {
             YValue = YCounter
         }
         YCounter += 1

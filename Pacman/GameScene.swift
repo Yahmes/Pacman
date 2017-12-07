@@ -14,6 +14,8 @@ class GameScene: SKScene {
     var isTouched:Bool = false
     let gridX: CGFloat = 27.4285714286
     let gridY: CGFloat = 27.4285714284
+    var tempX: CGFloat = 0
+    var tempY:CGFloat = 0
     
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
     var pacman = SKSpriteNode(imageNamed: "pacman left")
@@ -44,8 +46,10 @@ class GameScene: SKScene {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
-                    if GridDetection(coordinates: CGPoint(x: pacman.position.x ,y: pacman.position.y += gridY / 3)) != CGPoint(x: ) {
-                        
+                    tempY = pacman.position.y + gridY / 3
+                    if GridDetectionY(Y: tempY) != 0 {
+                        pacman.texture = SKTexture(imageNamed: "pacman up")
+                        pacman.position.y += gridY / 3
                     }
                     pacman.texture = SKTexture(imageNamed: "pacman up")
                     pacman.position.y += gridY / 3
