@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69324C951FD9773A0035207F /* Center of tile function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69324C941FD9773A0035207F /* Center of tile function.swift */; };
+		69324C971FD982050035207F /* Grid Detection X.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69324C961FD982050035207F /* Grid Detection X.swift */; };
 		69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4AE0D1FD19CC300C000E3 /* Map.swift */; };
 		69CBB3861FD6D43100255EFB /* grid detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CBB3851FD6D43100255EFB /* grid detection.swift */; };
 		B3508BCC1FCDA03C0085FF30 /* slkscr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		69324C941FD9773A0035207F /* Center of tile function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Center of tile function.swift"; sourceTree = "<group>"; };
+		69324C961FD982050035207F /* Grid Detection X.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid Detection X.swift"; sourceTree = "<group>"; };
 		69C4AE0D1FD19CC300C000E3 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		69CBB3851FD6D43100255EFB /* grid detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "grid detection.swift"; sourceTree = "<group>"; };
 		B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscr.ttf; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */,
 				BC6E3A521FC70347004FE3BB /* GameScene.swift */,
 				69CBB3851FD6D43100255EFB /* grid detection.swift */,
+				69324C961FD982050035207F /* Grid Detection X.swift */,
 				69324C941FD9773A0035207F /* Center of tile function.swift */,
 				BC6E3A541FC70347004FE3BB /* GameViewController.swift */,
 				BC6E3A4E1FC70347004FE3BB /* GameScene.sks */,
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69324C971FD982050035207F /* Grid Detection X.swift in Sources */,
 				69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */,
 				BC6E3A531FC70347004FE3BB /* GameScene.swift in Sources */,
 				BC6E3A551FC70347004FE3BB /* GameViewController.swift in Sources */,
