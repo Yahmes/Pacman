@@ -11,6 +11,7 @@
 		69324C971FD982050035207F /* Grid Detection X.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69324C961FD982050035207F /* Grid Detection X.swift */; };
 		69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4AE0D1FD19CC300C000E3 /* Map.swift */; };
 		69CBB3861FD6D43100255EFB /* grid detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CBB3851FD6D43100255EFB /* grid detection.swift */; };
+		A7E609CB1FD9835F00D631F4 /* Grid Detection Y.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E609CA1FD9835F00D631F4 /* Grid Detection Y.swift */; };
 		B3508BCC1FCDA03C0085FF30 /* slkscr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */; };
 		B3508BCE1FCDA0460085FF30 /* slkscrb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */; };
 		B3508BD01FCDA04F0085FF30 /* slkscre.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3508BCF1FCDA04F0085FF30 /* slkscre.ttf */; };
@@ -30,6 +31,7 @@
 		69324C961FD982050035207F /* Grid Detection X.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid Detection X.swift"; sourceTree = "<group>"; };
 		69C4AE0D1FD19CC300C000E3 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		69CBB3851FD6D43100255EFB /* grid detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "grid detection.swift"; sourceTree = "<group>"; };
+		A7E609CA1FD9835F00D631F4 /* Grid Detection Y.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid Detection Y.swift"; sourceTree = "<group>"; };
 		B3508BCB1FCDA03C0085FF30 /* slkscr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscr.ttf; sourceTree = "<group>"; };
 		B3508BCD1FCDA0460085FF30 /* slkscrb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscrb.ttf; sourceTree = "<group>"; };
 		B3508BCF1FCDA04F0085FF30 /* slkscre.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = slkscre.ttf; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				BC6E3A521FC70347004FE3BB /* GameScene.swift */,
 				69CBB3851FD6D43100255EFB /* grid detection.swift */,
 				69324C961FD982050035207F /* Grid Detection X.swift */,
+				A7E609CA1FD9835F00D631F4 /* Grid Detection Y.swift */,
 				69324C941FD9773A0035207F /* Center of tile function.swift */,
 				BC6E3A541FC70347004FE3BB /* GameViewController.swift */,
 				BC6E3A4E1FC70347004FE3BB /* GameScene.sks */,
@@ -190,6 +193,7 @@
 				69CBB3861FD6D43100255EFB /* grid detection.swift in Sources */,
 				69324C951FD9773A0035207F /* Center of tile function.swift in Sources */,
 				BC6E3A4D1FC70347004FE3BB /* AppDelegate.swift in Sources */,
+				A7E609CB1FD9835F00D631F4 /* Grid Detection Y.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
