@@ -13,19 +13,29 @@ import GameplayKit
 func CenterOfTile(tile: CGPoint) -> CGPoint {
     
     var tileCenter: CGPoint = CGPoint(x:0,y:0)
-    let gridX = 27.4285714286
-    let gridY = 27.4285714284
-    var XUpperLimit:CGFloat = 0
-    var XLowerLimit:CGFloat = 0
-    var YUpperLimit:CGFloat = 0
-    var YLowerLimit:CGFloat = 0
-    var XCounter:Double = 0
-    var YCounter:Double = 0
-    var XValue:Double = 0
-    var YValue:Double = 0
+    let gridX: CGFloat = 27.4285714286
+    let gridY: CGFloat = 27.4285714284
+    var XUpperLimit: CGFloat = 0
+    var XLowerLimit: CGFloat = 0
+    var YUpperLimit: CGFloat = 0
+    var YLowerLimit: CGFloat = 0
+    var XCounter: CGFloat = 0
+    var YCounter: CGFloat = 0
+    var XValue: CGFloat = 0
+    var YValue: CGFloat = 0
     
-    Xcounter
+    XCounter = tile.x
+    YCounter = tile.y - 3
+    
+    XLowerLimit = CGFloat(-384 + (gridX * XCounter))
+    XUpperLimit = CGFloat(-384 + (gridX * (XCounter + 1)))
+    XValue = (XLowerLimit + XUpperLimit) / 2
+   
+    YLowerLimit = CGFloat(-384 + (gridY * YCounter))
+    YUpperLimit = CGFloat(-384 + (gridY * (YCounter + 1)))
+    YValue = (YLowerLimit + YUpperLimit) / 2
+    
+    tileCenter = CGPoint(x: XValue, y: YValue)
     
     return tileCenter
-    
 }

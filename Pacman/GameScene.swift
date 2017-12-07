@@ -21,7 +21,7 @@ class GameScene: SKScene {
         pinky.xScale = 0.3
         pinky.yScale = 0.3
         addChild(pinky)
-        pacman.position = CGPoint(x: 0, y: -135)
+        pacman.position = CenterOfTile(tile: CGPoint(x: 14, y: 25))
         pacman.xScale = 0.325
         pacman.yScale = 0.325
         addChild(pacman)
