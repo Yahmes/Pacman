@@ -47,17 +47,18 @@ class GameScene: SKScene {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
                     tempY = pacman.position.y + gridY / 3
-                    //print (tempY)
-                    //print (GridDetectionY(Y: tempY))
-                    if GridDetectionY(Y: tempY) != 0 {
+                    if GridDetectionY(Y: tempY) > 0 {
                         pacman.texture = SKTexture(imageNamed: "pacman up")
                         pacman.position.y += gridY / 3
                     }
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
-                    pacman.texture = SKTexture(imageNamed: "pacman down")
-                    pacman.position.y -=  gridY / 3
+                    tempY = pacman.position.y - gridY / 3
+                    if GridDetectionY(Y: tempY) < 30 {
+                        pacman.texture = SKTexture(imageNamed: "pacman down")
+                        pacman.position.y -=  gridY / 3
+                    }
                 }
             }
             
