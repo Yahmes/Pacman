@@ -16,6 +16,7 @@ class GameScene: SKScene {
     let gridY: CGFloat = 27.4285714284
     var tempX: CGFloat = 0
     var tempY:CGFloat = 0
+    var allowedTiles: [CGPoint] = [CGPoint(x: 1 ,y: 1), CGPoint(x: 1 ,y: 2), CGPoint(x: 1 ,y: 3), CGPoint(x: 1 ,y: 4), CGPoint(x: 1 ,y: 5), CGPoint(x: 1 ,y: 6), CGPoint(x: 1 ,y: 7), CGPoint(x: 1 ,y: 8), CGPoint(x: 1 ,y: 9), CGPoint(x: 1 ,y: 10), CGPoint(x: 1 ,y: 11), CGPoint(x: 1 ,y: 12),  CGPoint(x: 1 ,y: 15), CGPoint(x: 1 ,y: 16), CGPoint(x: 1 ,y: 17), CGPoint(x: 1 ,y: 18), CGPoint(x: 1 ,y: 19), CGPoint(x: 1 ,y: 20), CGPoint(x: 1 ,y: 21), CGPoint(x: 1 ,y: 22), CGPoint(x: 1 ,y: 23), CGPoint(x: 1 ,y: 24), CGPoint(x: 1 ,y: 25), CGPoint(x: 1 ,y: 26), CGPoint(x: 2 ,y: 1), CGPoint(x: 2 ,y: 6), CGPoint(x: 2 ,y: 12), CGPoint(x: 2 ,y: 15), CGPoint(x: 2 ,y: 21), CGPoint(x: 2 ,y: 26), ]
     
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
     var pacman = SKSpriteNode(imageNamed: "pacman left")
