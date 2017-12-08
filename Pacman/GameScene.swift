@@ -65,13 +65,19 @@ class GameScene: SKScene {
             if touch.y <= -362 && touch.y >= -437 {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
-                    pacman.texture = SKTexture(imageNamed: "pacman left")
-                    pacman.position.x -= gridX / 3
+                    tempX = pacman.position.x - gridY / 3
+                    if GridDetectionX(X: tempX) > 0 {
+                        pacman.texture = SKTexture(imageNamed: "pacman left")
+                        pacman.position.x -= gridX / 3
+                    }
                 }
                     // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
-                    pacman.texture = SKTexture(imageNamed: "pacman right")
-                    pacman.position.x += gridX / 3
+                    tempX = pacman.position.x + gridY / 3
+                    if GridDetectionX(X: tempY) < 27 {
+                        pacman.texture = SKTexture(imageNamed: "pacman right")
+                        pacman.position.x += gridX / 3
+                    }
                 }
             }
         }

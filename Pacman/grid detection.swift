@@ -24,7 +24,7 @@ func GridDetection(coordinates: CGPoint) -> CGPoint {
     var XValue:Double = 0
     var YValue:Double = 0
     
-    while XCounter != 27 {
+    while XCounter <= 27 {
         XLowerLimit = CGFloat(-384 + (gridX * XCounter))
         XUpperLimit = CGFloat(-384 + (gridX * (XCounter + 1)))
         if coordinates.x >= 0 {
@@ -39,7 +39,7 @@ func GridDetection(coordinates: CGPoint) -> CGPoint {
         }
         XCounter += 1
     }
-    while YCounter != 30 {
+    while YCounter <= 30 {
         YLowerLimit = CGFloat(512 - (gridY * YCounter))
         YUpperLimit = CGFloat(512 -  (gridY * (YCounter + 1)))
         if coordinates.y >= 0 {

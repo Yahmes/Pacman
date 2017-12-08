@@ -18,26 +18,19 @@ func GridDetectionY(Y: CGFloat) -> CGFloat {
     var YCounter:CGFloat = 0
     var YValue:CGFloat = 0
     
-    while YCounter != 30 {
+    while YCounter <= 30 {
         YLowerLimit = CGFloat(512 - (gridY * YCounter))
         YUpperLimit = CGFloat(512 - (gridY * (YCounter + 1)))
-        
         //positive
         if Y < YLowerLimit && Y > YUpperLimit {
-            //print("n")
             YValue = YCounter
         }
         //transitional
         if Y < YLowerLimit && Y < YUpperLimit {
-            //print("n")
             YValue = YCounter
         }
         //negative
         if Y > YLowerLimit && Y < YUpperLimit {
-            print(Y)
-            print(YUpperLimit)
-            print(YLowerLimit)
-            print(YCounter)
             YValue = YCounter
         }
         

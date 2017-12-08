@@ -18,18 +18,20 @@ func GridDetectionX(X: CGFloat) -> CGFloat {
     var XCounter:CGFloat = 0
     var XValue:CGFloat = 0
     
-    while XCounter != 27 {
+    while XCounter <= 27 {
         XLowerLimit = CGFloat(-384 + (gridX * XCounter))
         XUpperLimit = CGFloat(-384 + (gridX * (XCounter + 1)))
-        if X >= 0 {
-            if X > XLowerLimit && X < XUpperLimit {
-                XValue = XCounter
-            }
+        //positive
+        if X < XLowerLimit && X > XUpperLimit {
+            XValue = XCounter
         }
-        if X <= 0 {
-            if X < XLowerLimit && X > XUpperLimit {
-                XValue = XCounter
-            }
+        //transitional
+        if X < XLowerLimit && X < XUpperLimit {
+            XValue = XCounter
+        }
+        //negative
+        if X > XLowerLimit && X < XUpperLimit {
+            XValue = XCounter
         }
         XCounter += 1
     }
