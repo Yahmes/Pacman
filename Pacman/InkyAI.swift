@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class inkyNode: SKSpriteNode {
-    class func inky() -> inkyNode {
+    class func inky() -> SKSpriteNode {
         var inky = SKSpriteNode(imageNamed: "inky+left")
 
         inky.position = CenterOfTile(tile: CGPoint(x: 17, y: 14))
@@ -20,3 +20,4 @@ class inkyNode: SKSpriteNode {
         return inky
     }
 }
+
