@@ -34,6 +34,24 @@ class GameScene: SKScene {
         addChild(MapNode.Map())
     }
     
+    func moveUp(character: SKSpriteNode, texture: String) {
+        for i in 0..<allowedTiles.capacity {
+            if allowedTiles[i].y == character.position.y + gridX / 3 {
+                character.texture = SKTexture(imageNamed: texture)
+                character.position.y += gridY / 3
+            }
+        }
+    }
+    func moveDown(character: SKSpriteNode) {
+        
+    }
+    func moveLeft(character: SKSpriteNode) {
+        
+    }
+    func moveRight(character: SKSpriteNode) {
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touch = touches.first!.location(in: self)
         isTouched = true
@@ -44,14 +62,15 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
                     tempY = pacman.position.y + gridY / 3
                     if GridDetectionY(Y: tempY) > 0 {
-                        pacman.texture = SKTexture(imageNamed: "pacman up")
-                        pacman.position.y += gridY / 3
+                        func moveUp(character: pacman, texture: "pacman up") {
+                        }
                     }
                 }
                     // DOWN
@@ -83,18 +102,7 @@ class GameScene: SKScene {
                 }
             }
         }
-        func moveUp(character: SKSpriteNode) {
-            
-        }
-        func moveDown(character: SKSpriteNode) {
-            
-        }
-        func moveLeft(character: SKSpriteNode) {
-            
-        }
-        func moveRight(character: SKSpriteNode) {
-            
-        }
+        
     }
 }
 
