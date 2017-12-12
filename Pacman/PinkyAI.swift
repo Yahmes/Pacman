@@ -10,11 +10,13 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-
-var pinky = SKSpriteNode(imageNamed: "pinky+left")
-
-pinky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
-pinky.xScale = 0.3
-pinky.yScale = 0.3
-addChild(pinky)
-
+class pinkyNode: SKSpriteNode {
+    class func pinky() -> SKSpriteNode {
+        var pinky = SKSpriteNode(imageNamed: "pinky+left")
+        
+        pinky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
+        pinky.xScale = 0.3
+        pinky.yScale = 0.3
+        return pinky
+    }
+}

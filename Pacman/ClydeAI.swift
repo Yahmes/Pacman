@@ -10,9 +10,13 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
- var clyde = SKSpriteNode(imageNamed: "clyde+left")
-
-clyde.position = CenterOfTile(tile: CGPoint(x: 16, y: 14))
-clyde.xScale = 0.3
-clyde.yScale = 0.3
-addChild(clyde)
+class clydeNode: SKSpriteNode {
+    class func clyde() -> SKSpriteNode {
+        var clyde = SKSpriteNode(imageNamed: "clyde+left")
+        
+        clyde.position = CenterOfTile(tile: CGPoint(x: 16, y: 14))
+        clyde.xScale = 0.3
+        clyde.yScale = 0.3
+        return clyde
+    }
+}
