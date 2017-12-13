@@ -35,64 +35,7 @@ class GameScene: SKScene {
         addChild(MapNode.Map())
     }
     
-    func moveUp(character: SKSpriteNode, texture: String) {
-        for i in 0..<allowedTiles.capacity {
-            if allowedTiles[i].y ==  pacmanTile.y + 1{
-                for _ in 0...2 {
-                    character.texture = SKTexture(imageNamed: texture)
-                    character.position.y += gridY / 3
-                    return
-                }
-            }
-            else {
-                pacmanTile.y -= 1
-            }
-        }
-    }
-    func moveDown(character: SKSpriteNode, texture: String) {
-       pacmanTile.y -= 1
-        for Check2 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check2].y == pacmanTile.y - 1{
-                for _ in 0...2 {
-                    character.texture = SKTexture(imageNamed: texture)
-                    character.position.y -= gridY / 3
-                    return
-                }
-           }
-            else {
-                pacmanTile.y += 1
-            }
-        }
-    }
-    func moveLeft(character: SKSpriteNode, texture: String) {
-        for Check4 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check4].x == pacmanTile.x - 1{
-                for _ in 0...2 {
-                    character.texture = SKTexture(imageNamed: texture)
-                    character.position.x += gridX / 3
-                    return
-                }
-            }
-            else {
-                pacmanTile.x += 1
-            }
-        }
-
-    }
-    func moveRight(character: SKSpriteNode, texture: String) {
-        for Check4 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check4].x == pacmanTile.x + 1{
-                for _ in 0...2 {
-                    character.texture = SKTexture(imageNamed: texture)
-                    character.position.x += gridX / 3
-                    return
-                }
-            }
-            else {
-                pacmanTile.x -= 1
-            }
-        }
-    }
+    
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touch = touches.first!.location(in: self)
@@ -104,6 +47,45 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        func moveUp(character: SKSpriteNode, texture: String) {
+            pacmanTile.y += 1
+            for Check1 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check1].y ==  pacmanTile.y {
+                        character.texture = SKTexture(imageNamed: texture)
+                        character.position.y += gridY / 3
+                        return
+                }
+            }
+        }
+        func moveDown(character: SKSpriteNode, texture: String) {
+            pacmanTile.y -= 1
+            for Check2 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check2].y == pacmanTile.y {
+                        character.texture = SKTexture(imageNamed: texture)
+                        character.position.y -= gridY / 3
+                        return
+                }
+            }
+        }
+        func moveLeft(character: SKSpriteNode, texture: String) {
+            pacmanTile.x -= 1
+            for Check3 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check3].x == pacmanTile.x {
+                        character.texture = SKTexture(imageNamed: texture)
+                        character.position.x -= gridX / 3
+                }
+            }
+        }
+        func moveRight(character: SKSpriteNode, texture: String) {
+            pacmanTile.x += 1
+            for Check4 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check4].x == pacmanTile.x {
+                        character.texture = SKTexture(imageNamed: texture)
+                        character.position.x += gridX / 3
+                        return
+                }
+            }
+        }
         
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
@@ -115,7 +97,7 @@ class GameScene: SKScene {
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
                     tempY = pacman.position.y - gridY / 3
-                    moveDown(character: pacman, texture: "pacman up")
+                    moveDown(character: pacman, texture: "pacman down")
                 }
             }
             
