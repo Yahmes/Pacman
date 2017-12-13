@@ -51,15 +51,37 @@ class GameScene: SKScene {
         }
     }
     func moveDown(character: SKSpriteNode) {
-        
+       pacmanTile.x -= 1
+        for Check2 in 0..<allowedTiles.capacity {
+            if allowedTiles[Check2].y == pacmanTile.y{
+                for incrementDown in 0...2 {
+                    character.texture = SKTexture(imagenamed: texture)
+                    character.position.y -= gridY / 3
+                    return
+                }
+           }
+            
+        }
     }
     func moveLeft(character: SKSpriteNode) {
-        
+       
     }
     func moveRight(character: SKSpriteNode) {
-        
+        pacmanTile.x += 1
+        for Check4 in 0..<allowedTiles.capacity {
+            if allowedTiles[Check4].x == pacmanTile.x{
+                for incrementRight in 0...2 {
+                    character.texture = SKTexture(imageNamed: texture)
+                    character.position.x += gridX / 3
+                    return
+                }
+            }
+            else {
+                pacmanTile.x -= 1
+            }
+        }
     }
-    
+ 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touch = touches.first!.location(in: self)
         isTouched = true
