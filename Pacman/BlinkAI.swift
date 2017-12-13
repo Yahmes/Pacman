@@ -10,15 +10,6 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class blinky:SKSpriteNode {
- var blinky = SKSpriteNode(imageNamed: "blinky+left")
-
-blinky.position = CenterOfTile(tile: CGPoint(x: 14, y: 14))
-blinky.xScale = 0.3
-blinky.yScale = 0.3
-addChild(blinky)
-
-
 class blinkyNode: SKSpriteNode {
     class func blinky() -> SKSpriteNode {
         var blinky = SKSpriteNode(imageNamed: "blinky+left")
@@ -28,5 +19,5 @@ class blinkyNode: SKSpriteNode {
         blinky.yScale = 0.3
         return blinky
     }
-
 }
+
