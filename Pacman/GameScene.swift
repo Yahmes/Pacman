@@ -35,6 +35,7 @@ class GameScene: SKScene {
     }
     
     func moveUp(character: SKSpriteNode, texture: String) {
+        
         for i in 0..<allowedTiles.capacity {
             if allowedTiles[i].y == character.position.y + gridX / 3 {
                 character.texture = SKTexture(imageNamed: texture)
@@ -68,10 +69,7 @@ class GameScene: SKScene {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
                     tempY = pacman.position.y + gridY / 3
-                    if GridDetectionY(Y: tempY) > 0 {
-                        func moveUp(character: pacman, texture: "pacman up") {
-                        }
-                    }
+                    moveUp(character: pacman, texture: "pacman up")
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
