@@ -36,9 +36,8 @@ class GameScene: SKScene {
     }
     
     func moveUp(character: SKSpriteNode, texture: String) {
-        pacmanTile.y += 1
         for i in 0..<allowedTiles.capacity {
-            if allowedTiles[i].y ==  pacmanTile.y{
+            if allowedTiles[i].y ==  pacmanTile.y + 1{
                 for _ in 0...2 {
                     character.texture = SKTexture(imageNamed: texture)
                     character.position.y += gridY / 3
@@ -50,27 +49,40 @@ class GameScene: SKScene {
             }
         }
     }
-    func moveDown(character: SKSpriteNode) {
-       pacmanTile.x -= 1
+    func moveDown(character: SKSpriteNode, texture: String) {
+       pacmanTile.y -= 1
         for Check2 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check2].y == pacmanTile.y{
-                for incrementDown in 0...2 {
-                    character.texture = SKTexture(imagenamed: texture)
+            if allowedTiles[Check2].y == pacmanTile.y - 1{
+                for _ in 0...2 {
+                    character.texture = SKTexture(imageNamed: texture)
                     character.position.y -= gridY / 3
                     return
                 }
            }
-            
+            else {
+                pacmanTile.y += 1
+            }
         }
     }
-    func moveLeft(character: SKSpriteNode) {
-       
-    }
-    func moveRight(character: SKSpriteNode) {
-        pacmanTile.x += 1
+    func moveLeft(character: SKSpriteNode, texture: String) {
         for Check4 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check4].x == pacmanTile.x{
-                for incrementRight in 0...2 {
+            if allowedTiles[Check4].x == pacmanTile.x - 1{
+                for _ in 0...2 {
+                    character.texture = SKTexture(imageNamed: texture)
+                    character.position.x += gridX / 3
+                    return
+                }
+            }
+            else {
+                pacmanTile.x += 1
+            }
+        }
+
+    }
+    func moveRight(character: SKSpriteNode, texture: String) {
+        for Check4 in 0..<allowedTiles.capacity {
+            if allowedTiles[Check4].x == pacmanTile.x + 1{
+                for _ in 0...2 {
                     character.texture = SKTexture(imageNamed: texture)
                     character.position.x += gridX / 3
                     return
@@ -103,10 +115,7 @@ class GameScene: SKScene {
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
                     tempY = pacman.position.y - gridY / 3
-                    if GridDetectionY(Y: tempY) < 30 {
-                        pacman.texture = SKTexture(imageNamed: "pacman down")
-                        pacman.position.y -=  gridY / 3
-                    }
+                    moveDown(character: pacman, texture: "pacman up")
                 }
             }
             
@@ -114,19 +123,12 @@ class GameScene: SKScene {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
                     tempX = pacman.position.x - gridX / 3
-                    if GridDetectionX(X: tempX) > 0 {
-                        pacman.texture = SKTexture(imageNamed: "pacman left")
-                        pacman.position.x -= gridX / 3
-                    }
+                    moveLeft(character: pacman, texture: "pacman left")
                 }
                     // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
                     tempX = pacman.position.x + gridX / 3
-                    if GridDetectionX(X: tempX) < 27 {
-                        pacman.texture = SKTexture(imageNamed: "pacman right")
-                        pacman.position.x += gridX / 3
-                    }
-                }
+                    moveRight(character: pacman, texture: "pacman right")}
             }
         }
         
