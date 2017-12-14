@@ -35,7 +35,51 @@ class GameScene: SKScene {
         addChild(MapNode.Map())
     }
     
-    
+    func moveUp(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+        for Check1 in 0..<allowedTiles.capacity {
+            if allowedTiles[Check1].x == tile.x {
+                if allowedTiles[Check1].y == tile.y + 1{
+                    pacman.texture = SKTexture(imageNamed: texture)
+                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
+                }
+            }
+        }
+        return tile
+    }
+    func moveDown(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+        for Check2 in 0..<allowedTiles.capacity {
+            if allowedTiles[Check2].x == tile.x {
+                if allowedTiles[Check2].y == tile.y - 1 {
+                    pacman.texture = SKTexture(imageNamed: texture)
+                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
+                }
+            }
+        }
+        return tile
+    }
+    func moveLeft(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+        for Check3 in 0..<allowedTiles.capacity {
+            if allowedTiles[Check3].x == tile.x - 1 {
+                if allowedTiles[Check3].y == tile.y {
+                    pacman.texture = SKTexture(imageNamed: texture)
+                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
+                }
+            }
+        }
+        return tile
+    }
+    func moveRight(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+        pacmanTile.x += 1
+        for Check4 in 0..<allowedTiles.capacity {
+            if allowedTiles[Check4].x == tile.x + 1 {
+                if allowedTiles[Check4].y == tile.y {
+                    pacman.texture = SKTexture(imageNamed: texture)
+                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
+                }
+            }
+        }
+        return tile
+    }
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touch = touches.first!.location(in: self)
@@ -43,61 +87,23 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //isTouched = false
+        isTouched = false
     }
     
     override func update(_ currentTime: TimeInterval) {
-        func moveUp(character: SKSpriteNode, texture: String) {
-            pacmanTile.y += 1
-            for Check1 in 0..<allowedTiles.capacity {
-                if allowedTiles[Check1].y ==  pacmanTile.y {
-                        character.texture = SKTexture(imageNamed: texture)
-                        character.position.y += gridY / 3
-                        return
-                }
-            }
-        }
-        func moveDown(character: SKSpriteNode, texture: String) {
-            pacmanTile.y -= 1
-            for Check2 in 0..<allowedTiles.capacity {
-                if allowedTiles[Check2].y == pacmanTile.y {
-                        character.texture = SKTexture(imageNamed: texture)
-                        character.position.y -= gridY / 3
-                        return
-                }
-            }
-        }
-        func moveLeft(character: SKSpriteNode, texture: String) {
-            pacmanTile.x -= 1
-            for Check3 in 0..<allowedTiles.capacity {
-                if allowedTiles[Check3].x == pacmanTile.x {
-                        character.texture = SKTexture(imageNamed: texture)
-                        character.position.x -= gridX / 3
-                }
-            }
-        }
-        func moveRight(character: SKSpriteNode, texture: String) {
-            pacmanTile.x += 1
-            for Check4 in 0..<allowedTiles.capacity {
-                if allowedTiles[Check4].x == pacmanTile.x {
-                        character.texture = SKTexture(imageNamed: texture)
-                        character.position.x += gridX / 3
-                        return
-                }
-            }
-        }
+        
         
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
                     tempY = pacman.position.y + gridY / 3
-                    moveUp(character: pacman, texture: "pacman up")
+                    pacmanTile = moveUp(character: pacman, texture: "pacman up", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
                     tempY = pacman.position.y - gridY / 3
-                    moveDown(character: pacman, texture: "pacman down")
+                    pacmanTile = moveDown(character: pacman, texture: "pacman down", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
                 }
             }
             
@@ -105,12 +111,13 @@ class GameScene: SKScene {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
                     tempX = pacman.position.x - gridX / 3
-                    moveLeft(character: pacman, texture: "pacman left")
+                    pacmanTile = moveLeft(character: pacman, texture: "pacman left", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
                 }
                     // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
                     tempX = pacman.position.x + gridX / 3
-                    moveRight(character: pacman, texture: "pacman right")}
+                    pacmanTile = moveRight(character: pacman, texture: "pacman right", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
+                }
             }
         }
         
