@@ -17,69 +17,38 @@ class GameScene: SKScene {
     var tempX: CGFloat = 0
     var tempY:CGFloat = 0
     var pacmanTile = CGPoint(x: 14, y: 23)
+<<<<<<< HEAD
     var allowedTiles: [CGPoint] = [CGPoint(x: 1 ,y: 1), CGPoint(x: 2 ,y: 1), CGPoint(x: 1 ,y: 3), CGPoint(x: 1 ,y: 4), CGPoint(x: 1 ,y: 5), CGPoint(x: 1 ,y: 6), CGPoint(x: 1 ,y: 7), CGPoint(x: 1 ,y: 8), CGPoint(x: 1 ,y: 9), CGPoint(x: 1 ,y: 10), CGPoint(x: 1 ,y: 11), CGPoint(x: 1 ,y: 12),  CGPoint(x: 1 ,y: 15), CGPoint(x: 1 ,y: 16), CGPoint(x: 1 ,y: 17), CGPoint(x: 1 ,y: 18), CGPoint(x: 1 ,y: 19), CGPoint(x: 1 ,y: 20), CGPoint(x: 1 ,y: 21), CGPoint(x: 1 ,y: 22), CGPoint(x: 1 ,y: 23), CGPoint(x: 1 ,y: 24), CGPoint(x: 1 ,y: 25), CGPoint(x: 1 ,y: 26), CGPoint(x: 2 ,y: 1), CGPoint(x: 2 ,y: 6), CGPoint(x: 2 ,y: 12), CGPoint(x: 2 ,y: 15), CGPoint(x: 2 ,y: 21), CGPoint(x: 2 ,y: 26), CGPoint(x: 3 ,y: 1), CGPoint(x: 3 ,y: 6), CGPoint(x: 3 ,y: 12), CGPoint(x: 3 ,y: 15), CGPoint(x: 3 ,y: 21), CGPoint(x: 3 ,y: 26), CGPoint(x: 4 ,y: 1), CGPoint(x: 4 ,y: 6), CGPoint(x: 4 ,y: 12), CGPoint(x: 4 ,y: 15), CGPoint(x: 4 ,y: 21), CGPoint(x:  4 ,y: 26), CGPoint(x: 5 ,y: 1), CGPoint(x: 5 ,y: 2), CGPoint(x: 5 ,y: 3), CGPoint(x: 5 ,y: 4), CGPoint(x: 5 ,y: 5), CGPoint(x: 5 ,y: 6), CGPoint(x: 5 ,y: 7), CGPoint(x: 5 ,y: 8), CGPoint(x: 5 ,y: 9), CGPoint(x: 5 ,y: 10), CGPoint(x: 5 ,y: 11), CGPoint(x: 5 ,y: 12), CGPoint(x: 5 ,y: 13), CGPoint(x: 5 ,y: 14), CGPoint(x: 5 ,y: 15), CGPoint(x: 5 ,y: 16), CGPoint(x: 5 ,y: 17), CGPoint(x: 5 ,y: 18), CGPoint(x: 5 ,y: 19), CGPoint(x: 5 ,y: 20), CGPoint(x: 5 ,y: 21), CGPoint(x: 5 ,y: 22), CGPoint(x: 5 ,y: 23), CGPoint(x: 5 ,y: 24), CGPoint(x: 5 ,y: 25), CGPoint(x: 5 ,y: 26), CGPoint(x: 6 ,y: 1), CGPoint(x: 6 ,y: 6), CGPoint(x: 6 ,y: 9), CGPoint(x: 6 ,y: 18), CGPoint(x: 6 ,y: 21), CGPoint(x:  6 ,y: 26), CGPoint(x: 7 ,y: 1), CGPoint(x: 7 ,y: 6), CGPoint(x: 7 ,y: 9), CGPoint(x: 7 ,y: 18), CGPoint(x: 7 ,y: 21), CGPoint(x:  7 ,y: 26), CGPoint(x: 8 ,y: 1), CGPoint(x: 8 ,y: 2), CGPoint(x: 8 ,y: 3), CGPoint(x: 8 ,y: 4), CGPoint(x: 8 ,y: 5), CGPoint(x: 8 ,y: 6), CGPoint(x: 8 ,y: 9), CGPoint(x: 8 ,y: 10), CGPoint(x: 8 ,y: 11), CGPoint(x: 8 ,y: 12),  CGPoint(x: 8 ,y: 15), CGPoint(x: 8 ,y: 16), CGPoint(x: 8 ,y: 17), CGPoint(x: 8 ,y: 18), CGPoint(x: 8 ,y: 21), CGPoint(x: 8 ,y: 22), CGPoint(x: 8 ,y: 23), CGPoint(x: 8 ,y: 24),  CGPoint(x: 8 ,y: 25), CGPoint(x: 8 ,y: 26), CGPoint(x: 9 ,y: 6), CGPoint(x: 9 ,y: 12), CGPoint(x: 9 ,y: 15), CGPoint(x: 9 ,y: 21), CGPoint(x: 10 ,y: 6), CGPoint(x: 10 ,y: 12), CGPoint(x: 10 ,y: 15), CGPoint(x:  10 ,y: 21), CGPoint(x: 11 ,y: 6), CGPoint(x: 11 ,y: 9), CGPoint(x: 11 ,y: 10), CGPoint(x: 11 ,y: 11), CGPoint(x: 11 ,y: 12), CGPoint(x: 11 ,y: 13), CGPoint(x: 11 ,y: 14), CGPoint(x: 11 ,y: 15), CGPoint(x: 11 ,y: 16), CGPoint(x: 11 ,y: 17), CGPoint(x: 11 ,y: 21), CGPoint(x: 11 ,y: 21), CGPoint(x: 12 ,y: 6), CGPoint(x: 12 ,y: 9), CGPoint(x: 12 ,y: 18), CGPoint(x: 12 ,y: 21), CGPoint(x: 13 ,y: 6), CGPoint(x: 13 ,y: 9), CGPoint(x: 13 ,y: 18), CGPoint(x: 13 ,y: 21), CGPoint(x: 14 ,y: 0), CGPoint(x: 14 ,y: 1), CGPoint(x: 14 ,y: 2), CGPoint(x: 14 ,y: 3), CGPoint(x: 14 ,y: 4), CGPoint(x: 14 ,y: 5), CGPoint(x: 14 ,y: 6), CGPoint(x: 14 ,y: 7), CGPoint(x: 14 ,y: 8), CGPoint(x: 14 ,y: 9), CGPoint(x: 14 ,y: 18), CGPoint(x: 14 ,y: 19), CGPoint(x: 14 ,y: 20), CGPoint(x: 14 ,y: 21), CGPoint(x: 14 ,y: 22), CGPoint(x: 14 ,y: 23), CGPoint(x: 14 ,y: 24), CGPoint(x: 14 ,y: 25), CGPoint(x: 14 ,y: 26), CGPoint(x: 14 ,y: 27), CGPoint(x: 15 ,y: 6), CGPoint(x: 15 ,y: 12), CGPoint(x: 15 ,y: 15), CGPoint(x: 15 ,y: 21), CGPoint(x: 16 ,y: 6), CGPoint(x: 16 ,y: 12), CGPoint(x: 16 ,y: 15), CGPoint(x:  16 ,y: 21), CGPoint(x: 17 ,y: 6), CGPoint(x: 17 ,y: 9), CGPoint(x: 17 ,y: 10), CGPoint(x: 17 ,y: 11), CGPoint(x: 17 ,y: 12), CGPoint(x: 17 ,y: 13), CGPoint(x: 17 ,y: 14), CGPoint(x: 17 ,y: 15), CGPoint(x: 17 ,y: 16), CGPoint(x: 17 ,y: 17), CGPoint(x: 17 ,y: 21), CGPoint(x: 17 ,y: 21), CGPoint(x: 18 ,y: 6), CGPoint(x: 18 ,y: 9), CGPoint(x: 18 ,y: 18), CGPoint(x: 18 ,y: 21), CGPoint(x: 19 ,y: 6), CGPoint(x: 19 ,y: 9), CGPoint(x: 19 ,y: 18), CGPoint(x: 19 ,y: 21), CGPoint(x: 20 ,y: 1), CGPoint(x: 20 ,y: 2), CGPoint(x: 20 ,y: 3), CGPoint(x: 20 ,y: 4), CGPoint(x: 20 ,y: 5), CGPoint(x: 20 ,y: 6), CGPoint(x: 20 ,y: 7), CGPoint(x: 20 ,y: 8), CGPoint(x: 20 ,y: 9), CGPoint(x: 20 ,y: 10), CGPoint(x: 20 ,y: 11), CGPoint(x: 20 ,y: 12),  CGPoint(x: 20 ,y: 15), CGPoint(x: 20 ,y: 16), CGPoint(x: 20 ,y: 17), CGPoint(x: 20 ,y: 18), CGPoint(x: 20 ,y: 19), CGPoint(x: 20 ,y: 20), CGPoint(x: 20 ,y: 21), CGPoint(x: 20 ,y: 22), CGPoint(x: 20 ,y: 23), CGPoint(x: 20 ,y: 24), CGPoint(x: 20,y: 25), CGPoint(x: 20 ,y: 26), CGPoint(x: 21 ,y: 1), CGPoint(x: 21 ,y: 6), CGPoint(x: 21 ,y: 12), CGPoint(x: 21 ,y: 15), CGPoint(x: 21 ,y: 21), CGPoint(x: 21 ,y: 26), CGPoint(x: 22 ,y: 1), CGPoint(x: 22 ,y: 6), CGPoint(x: 22 ,y: 12), CGPoint(x: 22 ,y: 15), CGPoint(x: 22 ,y: 21), CGPoint(x: 22 ,y: 26), CGPoint(x: 23 ,y: 1), CGPoint(x: 23 ,y: 2), CGPoint(x: 23 ,y: 3), CGPoint(x: 23 ,y: 6), CGPoint(x: 23 ,y: 7), CGPoint(x: 23 ,y: 8), CGPoint(x: 23 ,y: 9), CGPoint(x: 23 ,y: 10), CGPoint(x: 23 ,y: 11), CGPoint(x: 23 ,y: 12), CGPoint(x: 23 ,y: 13), CGPoint(x: 23 ,y: 14), CGPoint(x: 23 ,y: 15), CGPoint(x: 23 ,y: 16), CGPoint(x: 23 ,y: 17), CGPoint(x: 23 ,y: 18), CGPoint(x: 23 ,y: 19), CGPoint(x: 23 ,y: 20), CGPoint(x: 23 ,y: 21), CGPoint(x: 23 ,y: 24), CGPoint(x: 23 ,y: 25), CGPoint(x: 23 ,y: 26), CGPoint(x: 24 ,y: 3), CGPoint(x: 24 ,y: 6), CGPoint(x: 24 ,y: 9), CGPoint(x: 24 ,y: 18), CGPoint(x: 24 ,y: 21), CGPoint(x: 24 ,y: 24), CGPoint(x: 25 ,y: 3), CGPoint(x: 25 ,y: 6), CGPoint(x: 25 ,y: 9), CGPoint(x: 25 ,y: 18), CGPoint(x: 25 ,y: 21), CGPoint(x: 25 ,y: 24), CGPoint(x: 26 ,y: 1), CGPoint(x: 26 ,y: 2), CGPoint(x: 26 ,y: 3), CGPoint(x: 26 ,y: 4), CGPoint(x: 26 ,y: 5), CGPoint(x: 26 ,y: 6), CGPoint(x: 26 ,y: 9), CGPoint(x: 26 ,y: 10), CGPoint(x: 26 ,y: 11), CGPoint(x: 26 ,y: 12),  CGPoint(x: 26 ,y: 15), CGPoint(x: 26 ,y: 16), CGPoint(x: 26 ,y: 17), CGPoint(x: 26 ,y: 18), CGPoint(x: 26 ,y: 21), CGPoint(x: 26 ,y: 22), CGPoint(x: 26 ,y: 23), CGPoint(x: 26 ,y: 24),  CGPoint(x: 26 ,y: 25), CGPoint(x: 26 ,y: 26), CGPoint(x: 27 ,y: 1), CGPoint(x: 27 ,y: 12), CGPoint(x: 27 ,y: 15), CGPoint(x: 27 ,y: 26), CGPoint(x: 28 ,y: 1), CGPoint(x: 28 ,y: 12), CGPoint(x: 28 ,y: 15), CGPoint(x: 28 ,y: 26), CGPoint(x: 29 ,y: 1), CGPoint(x: 29 ,y: 2), CGPoint(x: 29 ,y: 3), CGPoint(x: 29 ,y: 4), CGPoint(x: 29 ,y: 5), CGPoint(x: 29 ,y: 6), CGPoint(x: 29 ,y: 7), CGPoint(x: 29 ,y: 8), CGPoint(x: 29 ,y: 9), CGPoint(x: 29 ,y: 10), CGPoint(x: 29 ,y: 11), CGPoint(x: 29 ,y: 12), CGPoint(x: 29 ,y: 13), CGPoint(x: 29 ,y: 14), CGPoint(x: 29 ,y: 15), CGPoint(x: 29 ,y: 16), CGPoint(x: 29 ,y: 17), CGPoint(x: 29 ,y: 18), CGPoint(x: 29 ,y: 19), CGPoint(x: 29 ,y: 20), CGPoint(x: 29 ,y: 21), CGPoint(x: 29 ,y: 22), CGPoint(x: 29 ,y: 23), CGPoint(x: 29 ,y: 24), CGPoint(x: 29 ,y: 25), CGPoint(x: 29 ,y: 26),]
+=======
+    var allowedTiles: [CGPoint] = [CGPoint(x: 1 ,y: 1), CGPoint(x: 2 ,y: 1), CGPoint(x: 3 ,y: 1), CGPoint(x: 4 ,y: 1), CGPoint(x: 5 ,y: 1), CGPoint(x: 6 ,y: 1), CGPoint(x: 7 ,y: 1), CGPoint(x: 8 ,y: 1), CGPoint(x: 9 ,y: 1), CGPoint(x: 10 ,y: 1), CGPoint(x: 11 ,y: 1), CGPoint(x: 12 ,y: 1),  CGPoint(x: 15 ,y: 1), CGPoint(x: 16 ,y: 1), CGPoint(x: 17 ,y: 1), CGPoint(x: 18 ,y: 1), CGPoint(x: 19 ,y: 1), CGPoint(x: 20 ,y: 21), CGPoint(x: 21 ,y: 1), CGPoint(x: 22 ,y: 1), CGPoint(x: 23 ,y: 1), CGPoint(x: 24 ,y: 1), CGPoint(x: 25 ,y: 1), CGPoint(x: 26 ,y: 1), CGPoint(x: 1 ,y: 2), CGPoint(x: 6 ,y: 2), CGPoint(x: 12 ,y: 2), CGPoint(x: 15 ,y: 2), CGPoint(x: 21 ,y: 2), CGPoint(x: 26 ,y: 2), CGPoint(x: 1 ,y: 3), CGPoint(x: 6 ,y: 3), CGPoint(x: 12 ,y: 3), CGPoint(x: 15 ,y: 13), CGPoint(x: 21 ,y: 3), CGPoint(x: 26 ,y: 3), CGPoint(x: 1 ,y: 4), CGPoint(x: 6 ,y: 4), CGPoint(x: 12 ,y: 4), CGPoint(x: 15 ,y: 4), CGPoint(x: 21 ,y: 4), CGPoint(x:  26 ,y: 4), CGPoint(x: 1 ,y: 5), CGPoint(x: 2 ,y: 5), CGPoint(x: 3 ,y: 5), CGPoint(x: 4 ,y: 5), CGPoint(x: 5 ,y: 5), CGPoint(x: 6 ,y: 5), CGPoint(x: 7 ,y: 5), CGPoint(x: 8 ,y: 5), CGPoint(x: 9 ,y: 5), CGPoint(x: 10 ,y: 5), CGPoint(x: 11 ,y: 5), CGPoint(x: 12 ,y: 5), CGPoint(x: 13 ,y: 5), CGPoint(x: 14 ,y: 5), CGPoint(x: 15 ,y: 5), CGPoint(x: 16 ,y: 5), CGPoint(x: 17 ,y: 5), CGPoint(x: 18 ,y: 5), CGPoint(x: 19 ,y: 5), CGPoint(x: 20 ,y: 5), CGPoint(x: 21 ,y: 5), CGPoint(x: 22 ,y: 5), CGPoint(x: 23 ,y: 5), CGPoint(x: 24 ,y: 5), CGPoint(x: 25 ,y: 5), CGPoint(x: 26 ,y: 5), CGPoint(x: 1 ,y: 6), CGPoint(x: 6 ,y: 6), CGPoint(x: 9 ,y: 6), CGPoint(x: 18 ,y: 6), CGPoint(x: 21 ,y: 6), CGPoint(x:  26 ,y: 6), CGPoint(x: 1 ,y: 7), CGPoint(x: 6 ,y: 7), CGPoint(x: 9 ,y: 7), CGPoint(x: 18 ,y: 7), CGPoint(x: 21 ,y: 7), CGPoint(x:  26 ,y: 7), CGPoint(x: 1 ,y: 8), CGPoint(x: 2 ,y: 8), CGPoint(x: 3 ,y: 8), CGPoint(x: 4 ,y: 8), CGPoint(x: 5 ,y: 8), CGPoint(x: 6 ,y: 8), CGPoint(x: 9 ,y: 8), CGPoint(x: 10 ,y: 8), CGPoint(x: 11 ,y: 8), CGPoint(x: 12 ,y: 8),  CGPoint(x: 15 ,y: 8), CGPoint(x: 16 ,y: 8), CGPoint(x: 17 ,y: 8), CGPoint(x: 18 ,y: 8), CGPoint(x: 21 ,y: 8), CGPoint(x: 22 ,y: 8), CGPoint(x: 23 ,y: 8), CGPoint(x: 24 ,y: 28),  CGPoint(x: 25 ,y: 8), CGPoint(x: 26 ,y: 8), CGPoint(x: 6 ,y: 9), CGPoint(x: 12 ,y: 9), CGPoint(x: 15 ,y: 9), CGPoint(x: 21 ,y: 9), CGPoint(x: 6 ,y: 10), CGPoint(x: 12 ,y: 10), CGPoint(x: 15 ,y: 10), CGPoint(x:  21 ,y: 10), CGPoint(x: 6 ,y: 11), CGPoint(x: 9 ,y: 11), CGPoint(x: 10 ,y: 11), CGPoint(x: 11 ,y: 11), CGPoint(x: 12 ,y: 11), CGPoint(x: 13 ,y: 11), CGPoint(x: 14 ,y: 11), CGPoint(x: 15 ,y: 11), CGPoint(x: 16 ,y: 11), CGPoint(x: 17 ,y: 11), CGPoint(x: 21 ,y: 11), CGPoint(x: 6 ,y: 12), CGPoint(x: 9 ,y: 12), CGPoint(x: 18 ,y: 12), CGPoint(x: 21 ,y: 12), CGPoint(x: 6 ,y: 13), CGPoint(x: 12 ,y: 13), CGPoint(x: 18 ,y: 13), CGPoint(x: 21 ,y: 13), CGPoint(x: 0 ,y: 14), CGPoint(x: 1 ,y: 14), CGPoint(x: 2 ,y: 14), CGPoint(x: 3 ,y: 14), CGPoint(x: 4 ,y: 14), CGPoint(x: 5 ,y: 14), CGPoint(x: 6 ,y: 14), CGPoint(x: 7 ,y: 14), CGPoint(x: 8 ,y: 14), CGPoint(x: 9 ,y: 14), CGPoint(x: 18 ,y: 14), CGPoint(x: 19 ,y: 14), CGPoint(x: 20 ,y: 14), CGPoint(x: 21 ,y: 14), CGPoint(x: 22 ,y: 14), CGPoint(x: 23 ,y: 14), CGPoint(x: 14 ,y: 24), CGPoint(x: 14 ,y: 25), CGPoint(x: 14 ,y: 26), CGPoint(x: 14 ,y: 27), CGPoint(x: 15 ,y: 6), CGPoint(x: 12 ,y: 15), CGPoint(x: 15 ,y: 15), CGPoint(x: 21 ,y: 15), CGPoint(x: 6 ,y: 16), CGPoint(x:  21 ,y: 16), CGPoint(x: 6 ,y: 17), CGPoint(x: 9 ,y: 17), CGPoint(x: 10 ,y: 17), CGPoint(x: 11 ,y: 17), CGPoint(x: 12 ,y: 17), CGPoint(x: 13 ,y: 17), CGPoint(x: 14 ,y: 17), CGPoint(x: 15 ,y: 17), CGPoint(x: 16 ,y: 17), CGPoint(x: 17 ,y: 17), CGPoint(x: 21 ,y: 17), CGPoint(x: 6 ,y: 18), CGPoint(x: 9 ,y: 18), CGPoint(x: 18 ,y: 18), CGPoint(x: 21 ,y: 18), CGPoint(x: 6 ,y: 19), CGPoint(x: 9 ,y: 19), CGPoint(x: 18,y: 19), CGPoint(x: 21 ,y: 19), CGPoint(x: 1 ,y: 20), CGPoint(x: 2 ,y: 20), CGPoint(x: 3 ,y: 20), CGPoint(x: 4 ,y: 20), CGPoint(x: 5 ,y: 20), CGPoint(x: 6 ,y: 20), CGPoint(x: 7 ,y: 20), CGPoint(x: 8 ,y: 20), CGPoint(x: 9 ,y: 20), CGPoint(x: 10 ,y: 20), CGPoint(x: 11 ,y: 20), CGPoint(x: 12 ,y: 20),  CGPoint(x: 15 ,y: 20), CGPoint(x: 16 ,y: 20), CGPoint(x: 17 ,y: 20), CGPoint(x: 18 ,y: 20), CGPoint(x: 19 ,y: 20), CGPoint(x: 20 ,y: 20), CGPoint(x: 21 ,y: 20), CGPoint(x: 22 ,y: 20), CGPoint(x: 23 ,y: 20), CGPoint(x: 24 ,y: 20), CGPoint(x: 25 ,y: 20), CGPoint(x: 26  ,y: 20), CGPoint(x: 1 ,y: 21 ), CGPoint(x: 6 ,y: 21), CGPoint(x: 12 ,y: 21), CGPoint(x: 15 ,y: 21), CGPoint(x: 21 ,y: 21), CGPoint(x: 26 ,y: 21), CGPoint(x: 1 ,y: 22), CGPoint(x: 6 ,y: 22), CGPoint(x: 12 ,y: 22), CGPoint(x: 15 ,y: 22), CGPoint(x: 21 ,y: 22), CGPoint(x: 26 ,y: 22), CGPoint(x: 1 ,y: 23), CGPoint(x: 2 ,y: 23), CGPoint(x: 3 ,y: 23), CGPoint(x: 6 ,y: 23), CGPoint(x: 7 ,y: 23), CGPoint(x: 8 ,y: 23), CGPoint(x: 9 ,y: 23), CGPoint(x: 10 ,y: 23), CGPoint(x: 11 ,y: 23), CGPoint(x: 12 ,y: 23), CGPoint(x: 13 ,y: 23), CGPoint(x: 14 ,y: 23), CGPoint(x: 15 ,y: 23), CGPoint(x: 16 ,y: 23), CGPoint(x: 17 ,y: 23), CGPoint(x:18 ,y: 23), CGPoint(x: 19 ,y: 23), CGPoint(x: 20 ,y: 23), CGPoint(x: 21 ,y: 23), CGPoint(x: 24 ,y: 22), CGPoint(x: 25 ,y: 23), CGPoint(x: 26 ,y: 23), CGPoint(x: 3 ,y: 24), CGPoint(x: 6 ,y: 24), CGPoint(x: 9 ,y: 24), CGPoint(x: 18 ,y: 24), CGPoint(x: 21 ,y: 24), CGPoint(x: 24 ,y: 24), CGPoint(x: 3 ,y: 25), CGPoint(x: 6 ,y: 25), CGPoint(x: 9 ,y: 25), CGPoint(x: 18 ,y: 25), CGPoint(x: 21 ,y: 25), CGPoint(x: 24 ,y: 25), CGPoint(x: 1 ,y: 26), CGPoint(x: 2 ,y: 26), CGPoint(x: 3 ,y: 26), CGPoint(x: 4 ,y: 26), CGPoint(x: 5 ,y: 26), CGPoint(x: 6 ,y: 26), CGPoint(x: 9 ,y: 26), CGPoint(x: 10 ,y: 26), CGPoint(x: 11 ,y: 26), CGPoint(x: 12 ,y: 26),  CGPoint(x: 15 ,y: 26), CGPoint(x: 16 ,y: 26), CGPoint(x: 17 ,y: 16), CGPoint(x: 18 ,y: 16), CGPoint(x: 21 ,y: 26), CGPoint(x: 22 ,y: 26), CGPoint(x: 23 ,y: 26), CGPoint(x: 24 ,y: 26),  CGPoint(x: 25 ,y: 26), CGPoint(x: 26 ,y: 26), CGPoint(x: 1 ,y: 27), CGPoint(x: 12 ,y: 27), CGPoint(x: 15 ,y: 27), CGPoint(x: 26 ,y: 27), CGPoint(x: 1 ,y: 28), CGPoint(x: 12 ,y: 28), CGPoint(x: 15 ,y: 28), CGPoint(x: 26 ,y: 28), CGPoint(x: 1 ,y: 29), CGPoint(x: 2 ,y: 29), CGPoint(x: 3 ,y: 29), CGPoint(x: 4 ,y: 29), CGPoint(x: 5 ,y: 29), CGPoint(x: 6 ,y: 29), CGPoint(x: 7 ,y: 29), CGPoint(x: 8 ,y: 29), CGPoint(x: 9 ,y: 29), CGPoint(x: 10 ,y: 29), CGPoint(x: 11 ,y: 29), CGPoint(x: 12 ,y: 29), CGPoint(x: 13 ,y: 26), CGPoint(x: 14 ,y: 29), CGPoint(x: 15 ,y: 29), CGPoint(x: 16 ,y: 29), CGPoint(x: 17 ,y: 29), CGPoint(x: 18 ,y: 29), CGPoint(x: 19 ,y: 29), CGPoint(x: 20 ,y: 29), CGPoint(x: 21 ,y: 29), CGPoint(x: 22 ,y: 29), CGPoint(x: 23 ,y: 29), CGPoint(x: 24 ,y: 29), CGPoint(x: 25 ,y: 29), CGPoint(x: 26 ,y: 29),]
+
+>>>>>>> 1f6db190a72c0a4e15f353d4b3ed9138cc98d600
     
   
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
     var pacman = SKSpriteNode(imageNamed: "pacman left")
+    let dot: SKSpriteNode = SKSpriteNode(imageNamed: "pellet-1")
    
     override func didMove(to view: SKView) {
+        dot.xScale = 0.325
+        dot.yScale = 0.325
+        self.addChild(dot)
+        for i in 0...152 {
+            dot.position = CenterOfTile(tile: allowedTiles[i])
+        }
         pinky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
         pinky.xScale = 0.3
         pinky.yScale = 0.3
-        addChild(pinky)
+         addChild(pinky)
         pacman.position = CenterOfTile(tile: pacmanTile)
         pacman.xScale = 0.325
         pacman.yScale = 0.325
         addChild(pacman)
         addChild(MapNode.Map())
+ 
     }
     
-    func moveUp(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
-        for Check1 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check1].x == tile.x {
-                if allowedTiles[Check1].y == tile.y + 1{
-                    pacman.texture = SKTexture(imageNamed: texture)
-                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
-                }
-            }
-        }
-        return tile
-    }
-    func moveDown(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
-        for Check2 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check2].x == tile.x {
-                if allowedTiles[Check2].y == tile.y - 1 {
-                    pacman.texture = SKTexture(imageNamed: texture)
-                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
-                }
-            }
-        }
-        return tile
-    }
-    func moveLeft(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
-        for Check3 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check3].x == tile.x - 1 {
-                if allowedTiles[Check3].y == tile.y {
-                    pacman.texture = SKTexture(imageNamed: texture)
-                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
-                }
-            }
-        }
-        return tile
-    }
-    func moveRight(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
-        pacmanTile.x += 1
-        for Check4 in 0..<allowedTiles.capacity {
-            if allowedTiles[Check4].x == tile.x + 1 {
-                if allowedTiles[Check4].y == tile.y {
-                    pacman.texture = SKTexture(imageNamed: texture)
-                    pacman.position = CenterOfTile(tile: CGPoint(x: tile.x,y: tile.y))
-                }
-            }
-        }
-        return tile
-    }
+    
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touch = touches.first!.location(in: self)
@@ -92,17 +61,62 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
+        func moveUp(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+            for Check1 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check1].x == tile.x {
+                    if allowedTiles[Check1].y == tile.y + 1 {
+                        pacman.texture = SKTexture(imageNamed: texture)
+                        pacman.position = CenterOfTile(tile: CGPoint(x: tile.x ,y: tile.y + 1))
+                    }
+                }
+            }
+            return tile
+        }
+        func moveDown(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+            for Check2 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check2].x == tile.x {
+                    if allowedTiles[Check2].y == tile.y - 1 {
+                        pacman.texture = SKTexture(imageNamed: texture)
+                        pacman.position = CenterOfTile(tile: CGPoint(x: tile.x ,y: tile.y - 1))
+                    }
+                }
+            }
+            return tile
+        }
+        func moveLeft(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+            for Check3 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check3].y == tile.y {
+                    if allowedTiles[Check3].x == tile.x - 1 {
+                        pacman.texture = SKTexture(imageNamed: texture)
+                        pacman.position = CenterOfTile(tile: CGPoint(x: tile.x - 1 ,y: tile.y))
+                    }
+                }
+            }
+            return tile
+        }
+        func moveRight(character: SKSpriteNode, texture: String, tile: CGPoint) -> CGPoint{
+            pacmanTile.x += 1
+            for Check4 in 0..<allowedTiles.capacity {
+                if allowedTiles[Check4].y == tile.y {
+                    if allowedTiles[Check4].x == tile.x + 1 {
+                        pacman.texture = SKTexture(imageNamed: texture)
+                        pacman.position = CenterOfTile(tile: CGPoint(x: tile.x + 1 ,y: tile.y))
+                    }
+                }
+            }
+            return tile
+        }
         
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
-                    tempY = pacman.position.y + gridY / 3
+                    print("up")
                     pacmanTile = moveUp(character: pacman, texture: "pacman up", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
                 }
                     // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
-                    tempY = pacman.position.y - gridY / 3
+                    print("down")
                     pacmanTile = moveDown(character: pacman, texture: "pacman down", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
                 }
             }
@@ -110,17 +124,16 @@ class GameScene: SKScene {
             if touch.y <= -362 && touch.y >= -437 {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
-                    tempX = pacman.position.x - gridX / 3
+                    print("left")
                     pacmanTile = moveLeft(character: pacman, texture: "pacman left", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
                 }
                     // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
-                    tempX = pacman.position.x + gridX / 3
+                    print("riht")
                     pacmanTile = moveRight(character: pacman, texture: "pacman right", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y))
                 }
             }
         }
-        
     }
 }
 
