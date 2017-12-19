@@ -87,7 +87,7 @@ class GameScene: SKScene {
             }
             for Check2 in LowerCounterLimit...UpperCounterLimit {
                if CGPoint(x: allowedTiles[Check2].x ,y: allowedTiles[Check2].y) == CGPoint(x: temp.x ,y: temp.y + 1) {
-                    if 0 == counter % 8 {
+                    if 0 == counter % 2 {
                         temp.y += 1
                         superArrayPoisition = Check2
                         pacman.texture = SKTexture(imageNamed: texture)
