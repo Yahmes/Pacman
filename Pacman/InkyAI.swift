@@ -11,12 +11,14 @@ import SpriteKit
 import GameplayKit
 
 class inkyNode: SKSpriteNode {
-    class func inky() -> SKSpriteNode {
+    class func inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int) -> SKSpriteNode {
         var inky = SKSpriteNode(imageNamed: "inky+up")
-
         inky.position = CenterOfTile(tile: CGPoint(x: 17, y: 14))
         inky.xScale = 0.3
         inky.yScale = 0.3
+        
+        if 
+        
         return inky
     }
 }

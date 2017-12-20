@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690C06211FEAA18A00788422 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C06201FEAA18A00788422 /* Move.swift */; };
 		69324C951FD9773A0035207F /* Center of tile function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69324C941FD9773A0035207F /* Center of tile function.swift */; };
 		69324C971FD982050035207F /* Grid Detection X.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69324C961FD982050035207F /* Grid Detection X.swift */; };
 		69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4AE0D1FD19CC300C000E3 /* Map.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690C06201FEAA18A00788422 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		69324C941FD9773A0035207F /* Center of tile function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Center of tile function.swift"; sourceTree = "<group>"; };
 		69324C961FD982050035207F /* Grid Detection X.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid Detection X.swift"; sourceTree = "<group>"; };
 		69C4AE0D1FD19CC300C000E3 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
@@ -100,8 +102,9 @@
 			children = (
 				BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */,
 				BC6E3A521FC70347004FE3BB /* GameScene.swift */,
-				A7E4C5451FDAD18200204062 /* PinkyAI.swift */,
+				690C06201FEAA18A00788422 /* Move.swift */,
 				A7E4C5471FDAD19600204062 /* BlinkAI.swift */,
+				A7E4C5451FDAD18200204062 /* PinkyAI.swift */,
 				A7E4C5491FDAD1AB00204062 /* InkyAI.swift */,
 				A7E4C54B1FDAD1C100204062 /* ClydeAI.swift */,
 				69CBB3851FD6D43100255EFB /* grid detection.swift */,
@@ -201,6 +204,7 @@
 				69324C971FD982050035207F /* Grid Detection X.swift in Sources */,
 				69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */,
 				BC6E3A531FC70347004FE3BB /* GameScene.swift in Sources */,
+				690C06211FEAA18A00788422 /* Move.swift in Sources */,
 				BC6E3A551FC70347004FE3BB /* GameViewController.swift in Sources */,
 				A7E4C5481FDAD19600204062 /* BlinkAI.swift in Sources */,
 				69CBB3861FD6D43100255EFB /* grid detection.swift in Sources */,
