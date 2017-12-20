@@ -100,8 +100,8 @@
 			children = (
 				BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */,
 				BC6E3A521FC70347004FE3BB /* GameScene.swift */,
-				A7E4C5451FDAD18200204062 /* PinkyAI.swift */,
 				A7E4C5471FDAD19600204062 /* BlinkAI.swift */,
+				A7E4C5451FDAD18200204062 /* PinkyAI.swift */,
 				A7E4C5491FDAD1AB00204062 /* InkyAI.swift */,
 				A7E4C54B1FDAD1C100204062 /* ClydeAI.swift */,
 				69CBB3851FD6D43100255EFB /* grid detection.swift */,
