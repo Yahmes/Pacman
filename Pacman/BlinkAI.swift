@@ -12,12 +12,14 @@ import GameplayKit
 
 
 class blinkyNode: SKSpriteNode {
-    class func blinky() -> SKSpriteNode {
+    class func blinky(PacmanPosition: CGPoint, PacmanDirection: Int) -> SKSpriteNode {
         var blinky = SKSpriteNode(imageNamed: "blinky+up")
         
         blinky.position = CenterOfTile(tile: CGPoint(x: 15, y: 14))
         blinky.xScale = 0.3
         blinky.yScale = 0.3
+        
+        
         return blinky
     }
 
