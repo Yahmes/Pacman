@@ -12,14 +12,26 @@ import GameplayKit
 
 class inkyNode: SKSpriteNode {
     class func inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int) -> SKSpriteNode {
-        var inky = SKSpriteNode(imageNamed: "inky+up")
-        inky.position = CenterOfTile(tile: CGPoint(x: 17, y: 14))
-        inky.xScale = 0.3
-        inky.yScale = 0.3
+        var Inky = SKSpriteNode(imageNamed: "pinky+left")
+        var blikyTarget: CGPoint
+        var inkyTarget: CGPoint
+        Inky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
+        Inky.xScale = 0.3
+        Inky.yScale = 0.3
         
-        if 
+        if pacmanDirection == 1 {
+            blikyTarget = CGPoint(x: PacmanPosition.x + 2 ,y: PacmanPosition.y - 2)
+        } else if pacmanDirection == 2 {
+            blikyTarget = CGPoint(x: PacmanPosition.x ,y: PacmanPosition.y + 2)
+        } else if pacmanDirection == 3 {
+            blikyTarget = CGPoint(x: PacmanPosition.x - 2 ,y: PacmanPosition.y)
+        } else {
+            blikyTarget = CGPoint(x: PacmanPosition.x + 2 ,y: PacmanPosition.y)
+        }
         
-        return inky
+        
+        
+        return Inky
     }
 }
 

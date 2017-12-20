@@ -25,15 +25,14 @@ func moveUp(character: inout SKSpriteNode, texture: String, tile: CGPoint, super
     }
     for Check1 in LowerCounterLimit...UpperCounterLimit {
         if CGPoint(x: allowedTiles[Check1].x ,y: allowedTiles[Check1].y) == CGPoint(x: temp.x ,y: temp.y - 1) {
-            //if 0 == counter % 2 {
             temp.y -= 1
             superArrayPosition = Check1
             character.texture = SKTexture(imageNamed: texture)
             character.position = CenterOfTile(tile: CGPoint(x: temp.x ,y: temp.y))
-            //}
+            return temp
         }
     }
-    return temp
+    return CGPoint(x: 100,y: 100)
 }
 func moveDown(character: inout SKSpriteNode, texture: String, tile: CGPoint, superArrayPosition: inout Int) -> CGPoint{
     temp = tile
@@ -46,15 +45,14 @@ func moveDown(character: inout SKSpriteNode, texture: String, tile: CGPoint, sup
     }
     for Check2 in LowerCounterLimit...UpperCounterLimit {
         if CGPoint(x: allowedTiles[Check2].x ,y: allowedTiles[Check2].y) == CGPoint(x: temp.x ,y: temp.y + 1) {
-            //if 0 == counter % 2 {
             temp.y += 1
             superArrayPosition = Check2
             character.texture = SKTexture(imageNamed: texture)
             character.position = CenterOfTile(tile: CGPoint(x: temp.x ,y: temp.y))
-            //}
+            return temp
         }
     }
-    return temp
+    return CGPoint(x: 100,y: 100)
 }
 func moveLeft(character: inout SKSpriteNode, texture: String, tile: CGPoint, superArrayPosition: inout Int) -> CGPoint{
     temp = tile
@@ -64,14 +62,14 @@ func moveLeft(character: inout SKSpriteNode, texture: String, tile: CGPoint, sup
         LowerCounterLimit = superArrayPosition - 1
     }
     if CGPoint(x: allowedTiles[LowerCounterLimit].x ,y: allowedTiles[LowerCounterLimit].y) == CGPoint(x: temp.x - 1 ,y: temp.y) {
-        //if 0 == counter % 2 {
         temp.x -= 1
         superArrayPosition -= 1
         character.texture = SKTexture(imageNamed: texture)
         character.position = CenterOfTile(tile: CGPoint(x: temp.x ,y: temp.y))
-        //}
+        return temp
+    } else {
+        return CGPoint(x: 100,y: 100)
     }
-    return temp
 }
 func moveRight(character: inout SKSpriteNode, texture: String, tile: CGPoint, superArrayPosition: inout Int) -> CGPoint{
     temp = tile
@@ -81,13 +79,13 @@ func moveRight(character: inout SKSpriteNode, texture: String, tile: CGPoint, su
         UpperCounterLimit = superArrayPosition + 1
     }
     if CGPoint(x: allowedTiles[UpperCounterLimit].x ,y: allowedTiles[UpperCounterLimit].y) == CGPoint(x: temp.x + 1 ,y: temp.y) {
-        //if 0 == counter % 2 {
         temp.x += 1
         superArrayPosition += 1
         character.texture = SKTexture(imageNamed: texture)
         character.position = CenterOfTile(tile: CGPoint(x: temp.x ,y: temp.y))
-        //}
+        return temp
+    } else {
+        return CGPoint(x: 100,y: 100)
     }
-    return temp
 }
 
