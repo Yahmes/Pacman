@@ -30,7 +30,7 @@ class GameScene: SKScene {
         dot.yScale = 0.325
         self.addChild(dot)
         //print(allowedTiles.capacity)
-        dot.position = CenterOfTile(tile: allowedTiles[214])
+        dot.position = CenterOfTile(tile: allowedTiles[238])
         
         pinky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
         pinky.xScale = 0.3

@@ -88,4 +88,3 @@ func moveRight(character: inout SKSpriteNode, texture: String, tile: CGPoint, su
         return CGPoint(x: 100,y: 100)
     }
 }
-

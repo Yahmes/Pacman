@@ -13,25 +13,76 @@ import GameplayKit
 class inkyNode: SKSpriteNode {
     class func inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int) -> SKSpriteNode {
         var Inky = SKSpriteNode(imageNamed: "pinky+left")
-        var blikyTarget: CGPoint
-        var inkyTarget: CGPoint
+        var InkyTile: CGPoint = CGPoint(x: 13, y: 14)
+        var blinkyTarget: CGPoint
+        var InkyTarget: CGPoint
+        var tempX: CGFloat
+        var tempY: CGFloat
+        var upDistance: Double = 0
+        var downDistance: Double = 0
+        var leftDistance: Double = 0
+        var rightDistance: Double = 0
+        var direction: Int
+        var temp1: String
+        var InkysuperArrayPosition: Int = 138
+        var priority: Array<Double> = [upDistance , downDistance , leftDistance , rightDistance]
         Inky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
         Inky.xScale = 0.3
         Inky.yScale = 0.3
         
         if pacmanDirection == 1 {
-            blikyTarget = CGPoint(x: PacmanPosition.x + 2 ,y: PacmanPosition.y - 2)
+            blinkyTarget = CGPoint(x: PacmanPosition.x + 2 ,y: PacmanPosition.y - 2)
         } else if pacmanDirection == 2 {
-            blikyTarget = CGPoint(x: PacmanPosition.x ,y: PacmanPosition.y + 2)
+            blinkyTarget = CGPoint(x: PacmanPosition.x ,y: PacmanPosition.y + 2)
         } else if pacmanDirection == 3 {
-            blikyTarget = CGPoint(x: PacmanPosition.x - 2 ,y: PacmanPosition.y)
+            blinkyTarget = CGPoint(x: PacmanPosition.x - 2 ,y: PacmanPosition.y)
         } else {
-            blikyTarget = CGPoint(x: PacmanPosition.x + 2 ,y: PacmanPosition.y)
+            blinkyTarget = CGPoint(x: PacmanPosition.x + 2 ,y: PacmanPosition.y)
         }
         
+        tempX = blinkyTarget.x - BlinkyPosition.x
+        tempY = blinkyTarget.y - BlinkyPosition.y
         
+        InkyTarget = CGPoint(x: blinkyTarget.x - tempX, y: blinkyTarget.y - tempY)
         
+        // priority setting
+        // up
+        upDistance = sqrt(pow(Double(InkyTarget.x - InkyTile.x), 2 ) + pow(Double(InkyTarget.y - InkyTile.y - 1), 2))
+        // down
+        downDistance = sqrt(pow(Double(InkyTarget.x - InkyTile.x), 2 ) + pow(Double(InkyTarget.y - InkyTile.y + 1), 2))
+        // left
+        leftDistance = sqrt(pow(Double(InkyTarget.x - InkyTile.x - 1), 2 ) + pow(Double(InkyTarget.y - InkyTile.y), 2))
+        // right
+        rightDistance = sqrt(pow(Double(InkyTarget.x - InkyTile.x + 1), 2 ) + pow(Double(InkyTarget.y - InkyTile.y), 2))
+        
+        func sort (array: inout Array<Double>) {
+            let first: Int = 0
+            let second: Int = 1
+            if array != array.sorted() {
+                for i in 0..<array.capacity-1 {
+                    if array[first+i] > array[second+i] {
+                        array.swapAt(first+i, second+i)
+                    }
+                }
+            }
+        }
+        sort(array: &priority)
+        
+        if priority[1] == upDistance {
+            temp = moveUp(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+        }
+        if priority[2] == downDistance {
+           temp = moveDown(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+        }
+        if priority[3] == leftDistance {
+            temp = moveLeft(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+        }
+        if priority[4] == rightDistance {
+            temp = moveRight(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+        }
+
         return Inky
+            
     }
 }
 
