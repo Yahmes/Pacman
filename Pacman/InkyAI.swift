@@ -10,9 +10,9 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class inkyNode: SKSpriteNode {
-    class func inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int) -> SKSpriteNode {
-        var Inky = SKSpriteNode(imageNamed: "pinky+left")
+class InkyNode: SKSpriteNode {
+    class func Inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int) -> SKSpriteNode {
+        var Inky = SKSpriteNode(imageNamed: "Inky+Up")
         var InkyTile: CGPoint = CGPoint(x: 13, y: 14)
         var blinkyTarget: CGPoint
         var InkyTarget: CGPoint
