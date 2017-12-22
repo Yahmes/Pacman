@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class BlinkyNode: SKSpriteNode {
-    class func Blinky(PacmanPosition: CGPoint, pacmanDirection: Int) -> SKSpriteNode {
+    class func Blinky(PacmanPosition: CGPoint, pacmanDirection: Int) -> CGPoint {
         var Blinky = SKSpriteNode(imageNamed: "Blinky+left")
         var BlinkyTile: CGPoint = CGPoint(x: 13, y: 14)
         var BlinkyTarget: CGPoint
@@ -155,7 +155,7 @@ class BlinkyNode: SKSpriteNode {
             }
         }
         
-        return Blinky
+        return BlinkyTile
         
     }
 }

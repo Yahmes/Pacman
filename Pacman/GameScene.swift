@@ -20,7 +20,7 @@ class GameScene: SKScene {
     var pacmanSuperArrayPoisition: Int = 218
     var counter: Int = 0
     var pacmanDirection: Int = 0
-   
+    var BlinkyTile: CGPoint = CGPoint(x: 0, y: 0)
     var pinky = SKSpriteNode(imageNamed: "pinky+left")
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     let dot: SKSpriteNode = SKSpriteNode(imageNamed: "pellet-1")
@@ -53,6 +53,9 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
+        BlinkyTile = BlinkyNode.Blinky(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection)
+        InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection)
         
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
