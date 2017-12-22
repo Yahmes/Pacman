@@ -68,17 +68,105 @@ class inkyNode: SKSpriteNode {
         }
         sort(array: &priority)
         
-        if priority[1] == upDistance {
+        if priority[0] == upDistance {
             temp = moveUp(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            if temp == CGPoint(x: 100, y: 100) {
+                if priority[1] == downDistance {
+                    temp = moveDown(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    if temp == CGPoint(x: 100, y: 100) {
+                        if priority[2] == leftDistance {
+                            temp = moveLeft(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            if temp == CGPoint(x: 100, y: 100) {
+                                    temp = moveRight(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                    if temp != CGPoint(x: 100, y: 100) {
+                                        InkyTile = temp
+                                    }
+                            } else {
+                                InkyTile = temp
+                            }
+                        }
+                    } else {
+                        InkyTile = temp
+                    }
+                }
+            } else {
+                InkyTile = temp
+            }
         }
-        if priority[2] == downDistance {
-           temp = moveDown(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+        if priority[1] == upDistance {
+            temp = moveDown(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            if temp == CGPoint(x: 100, y: 100) {
+                if priority[2] == downDistance {
+                    temp = moveLeft(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    if temp == CGPoint(x: 100, y: 100) {
+                        if priority[3] == leftDistance {
+                            temp = moveRight(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            if temp == CGPoint(x: 100, y: 100) {
+                                temp = moveUp(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                if temp != CGPoint(x: 100, y: 100) {
+                                    InkyTile = temp
+                                }
+                            } else {
+                                InkyTile = temp
+                            }
+                        }
+                    } else {
+                        InkyTile = temp
+                    }
+                }
+            } else {
+                InkyTile = temp
+            }
         }
-        if priority[3] == leftDistance {
-            temp = moveLeft(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+        if priority[2] == upDistance {
+            temp = moveLeft(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            if temp == CGPoint(x: 100, y: 100) {
+                if priority[3] == downDistance {
+                    temp = moveRight(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    if temp == CGPoint(x: 100, y: 100) {
+                        if priority[0] == leftDistance {
+                            temp = moveUp(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            if temp == CGPoint(x: 100, y: 100) {
+                                temp = moveDown(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                if temp != CGPoint(x: 100, y: 100) {
+                                    InkyTile = temp
+                                }
+                            } else {
+                                InkyTile = temp
+                            }
+                        }
+                    } else {
+                        InkyTile = temp
+                    }
+                }
+            } else {
+                InkyTile = temp
+            }
         }
-        if priority[4] == rightDistance {
-            temp = moveRight(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+        if priority[3] == upDistance {
+            temp = moveRight(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            if temp == CGPoint(x: 100, y: 100) {
+                if priority[0] == downDistance {
+                    temp = moveUp(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    if temp == CGPoint(x: 100, y: 100) {
+                        if priority[1] == leftDistance {
+                            temp = moveDown(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            if temp == CGPoint(x: 100, y: 100) {
+                                temp = moveLeft(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                if temp != CGPoint(x: 100, y: 100) {
+                                    InkyTile = temp
+                                }
+                            } else {
+                                InkyTile = temp
+                            }
+                        }
+                    } else {
+                        InkyTile = temp
+                    }
+                }
+            } else {
+                InkyTile = temp
+            }
         }
 
         return Inky
