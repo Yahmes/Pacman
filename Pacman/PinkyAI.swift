@@ -46,14 +46,35 @@ class pinkyNode: SKSpriteNode {
                     if downDistance  < leftDistance || downDistance  < rightDistance {
                         pinky.position.y += 1
                         downPriority = 2
+                        if leftDistance < rightDistance && downPriority == 2 {
+                            leftPriority = 3
+                            rightPriority = 4
+                        }else{
+                           rightPriority = 3
+                            leftPriority = 4
+                        }
                     }
                     if  leftDistance  < downDistance || leftDistance  < rightDistance {
                         pinky.position.y += 1
                         leftPriority = 2
+                        if downDistance < rightDistance && leftPriority == 2 {
+                            downPriority = 3
+                            rightPriority = 4
+                        }else{
+                            rightPriority = 3
+                            downPriority = 4
+                        }
                     }
                     if  rightDistance  < downDistance || rightDistance < leftDistance   {
                         pinky.position.y += 1
                         rightPriority = 2
+                        if downDistance < leftDistance && rightPriority == 2 {
+                            downPriority = 3
+                            leftPriority = 4
+                        }else{
+                            leftPriority = 3
+                            downPriority = 4
+                        }
                     }
                 }
             if downDistance  < upDistance || downDistance  < leftDistance || downDistance  < rightDistance {
