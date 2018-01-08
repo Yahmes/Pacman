@@ -11,9 +11,8 @@ import SpriteKit
 import GameplayKit
 
 class InkyNode: SKSpriteNode {
-    class func Inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int) {
-        var Inky = SKSpriteNode(imageNamed: "Inky+Up")
-        var InkyTile: CGPoint = CGPoint(x: 13, y: 14)
+    class func Inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int, Inky: inout SKSpriteNode) {
+        var InkyTile: CGPoint = CGPoint(x: 12, y: 11)
         var blinkyTarget: CGPoint
         var InkyTarget: CGPoint
         var tempX: CGFloat
@@ -26,7 +25,7 @@ class InkyNode: SKSpriteNode {
         var temp1: String
         var InkysuperArrayPosition: Int = 138
         var priority: Array<Double> = [upDistance , downDistance , leftDistance , rightDistance]
-        Inky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
+        Inky.position = CenterOfTile(tile: InkyTile)
         Inky.xScale = 0.3
         Inky.yScale = 0.3
         
@@ -69,15 +68,15 @@ class InkyNode: SKSpriteNode {
         sort(array: &priority)
         
         if priority[0] == upDistance {
-            temp = moveUp(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            temp = moveUp(character: &Inky, texture: "inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == downDistance {
-                    temp = moveDown(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    temp = moveDown(character: &Inky, texture: "inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[2] == leftDistance {
-                            temp = moveLeft(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            temp = moveLeft(character: &Inky, texture: "inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                    temp = moveRight(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                    temp = moveRight(character: &Inky, texture: "inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                                     if temp != CGPoint(x: 100, y: 100) {
                                         InkyTile = temp
                                     }
@@ -94,15 +93,15 @@ class InkyNode: SKSpriteNode {
             }
         }
         if priority[1] == upDistance {
-            temp = moveDown(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            temp = moveDown(character: &Inky, texture: "inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[2] == downDistance {
-                    temp = moveLeft(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    temp = moveLeft(character: &Inky, texture: "inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[3] == leftDistance {
-                            temp = moveRight(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            temp = moveRight(character: &Inky, texture: "inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                temp = moveUp(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                temp = moveUp(character: &Inky, texture: "inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                                 if temp != CGPoint(x: 100, y: 100) {
                                     InkyTile = temp
                                 }
@@ -119,15 +118,15 @@ class InkyNode: SKSpriteNode {
             }
         }
         if priority[2] == upDistance {
-            temp = moveLeft(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            temp = moveLeft(character: &Inky, texture: "inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[3] == downDistance {
-                    temp = moveRight(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    temp = moveRight(character: &Inky, texture: "inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[0] == leftDistance {
-                            temp = moveUp(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            temp = moveUp(character: &Inky, texture: "inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                temp = moveDown(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                temp = moveDown(character: &Inky, texture: "inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                                 if temp != CGPoint(x: 100, y: 100) {
                                     InkyTile = temp
                                 }
@@ -144,15 +143,15 @@ class InkyNode: SKSpriteNode {
             }
         }
         if priority[3] == upDistance {
-            temp = moveRight(character: &Inky, texture: "Inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+            temp = moveRight(character: &Inky, texture: "inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[0] == downDistance {
-                    temp = moveUp(character: &Inky, texture: "Inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                    temp = moveUp(character: &Inky, texture: "inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[1] == leftDistance {
-                            temp = moveDown(character: &Inky, texture: "Inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                            temp = moveDown(character: &Inky, texture: "inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                temp = moveLeft(character: &Inky, texture: "Inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
+                                temp = moveLeft(character: &Inky, texture: "inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
                                 if temp != CGPoint(x: 100, y: 100) {
                                     InkyTile = temp
                                 }
@@ -170,4 +169,5 @@ class InkyNode: SKSpriteNode {
         }
     }
 }
+
 

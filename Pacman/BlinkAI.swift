@@ -11,9 +11,8 @@ import SpriteKit
 import GameplayKit
 
 class BlinkyNode: SKSpriteNode {
-    class func Blinky(PacmanPosition: CGPoint, pacmanDirection: Int) -> CGPoint {
-        var Blinky = SKSpriteNode(imageNamed: "Blinky+left")
-        var BlinkyTile: CGPoint = CGPoint(x: 13, y: 14)
+    class func Blinky(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
+        var BlinkyTile: CGPoint = CGPoint(x: 14, y: 11)
         var BlinkyTarget: CGPoint
         var tempX: CGFloat
         var tempY: CGFloat
@@ -33,13 +32,13 @@ class BlinkyNode: SKSpriteNode {
         
         // priority setting
         // up
-        upDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y - 1), 2))
+        upDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
         // down
-        downDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y + 1), 2))
+        downDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
         // left
-        leftDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x - 1), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
+        leftDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
         // right
-        rightDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x + 1), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
+        rightDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
         
         func sort (array: inout Array<Double>) {
             let first: Int = 0
@@ -55,15 +54,15 @@ class BlinkyNode: SKSpriteNode {
         sort(array: &priority)
         
         if priority[0] == upDistance {
-            temp = moveUp(character: &Blinky, texture: "Blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+            temp = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == downDistance {
-                    temp = moveDown(character: &Blinky, texture: "Blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                    temp = moveDown(character: &Blinky, texture: "blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[2] == leftDistance {
-                            temp = moveLeft(character: &Blinky, texture: "Blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                            temp = moveLeft(character: &Blinky, texture: "blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                temp = moveRight(character: &Blinky, texture: "Blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                                temp = moveRight(character: &Blinky, texture: "blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                                 if temp != CGPoint(x: 100, y: 100) {
                                     BlinkyTile = temp
                                 }
@@ -80,15 +79,15 @@ class BlinkyNode: SKSpriteNode {
             }
         }
         if priority[0] == downDistance {
-            temp = moveDown(character: &Blinky, texture: "Blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+            temp = moveDown(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == leftDistance {
-                    temp = moveLeft(character: &Blinky, texture: "Blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                    temp = moveLeft(character: &Blinky, texture: "blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[2] == rightDistance {
-                            temp = moveRight(character: &Blinky, texture: "Blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                            temp = moveRight(character: &Blinky, texture: "blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                temp = moveUp(character: &Blinky, texture: "Blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                                temp = moveUp(character: &Blinky, texture: "blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                                 if temp != CGPoint(x: 100, y: 100) {
                                     BlinkyTile = temp
                                 }
@@ -105,15 +104,15 @@ class BlinkyNode: SKSpriteNode {
             }
         }
         if priority[0] == leftDistance {
-            temp = moveLeft(character: &Blinky, texture: "Blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+            temp = moveLeft(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == rightDistance {
-                    temp = moveRight(character: &Blinky, texture: "Blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                    temp = moveRight(character: &Blinky, texture: "blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[2] == upDistance {
-                            temp = moveUp(character: &Blinky, texture: "Blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                            temp = moveUp(character: &Blinky, texture: "blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                temp = moveDown(character: &Blinky, texture: "Blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                                temp = moveDown(character: &Blinky, texture: "blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                                 if temp != CGPoint(x: 100, y: 100) {
                                     BlinkyTile = temp
                                 }
@@ -130,15 +129,15 @@ class BlinkyNode: SKSpriteNode {
             }
         }
         if priority[0] == rightDistance {
-            temp = moveRight(character: &Blinky, texture: "Blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+            temp = moveRight(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == leftDistance {
-                    temp = moveUp(character: &Blinky, texture: "Blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                    temp = moveUp(character: &Blinky, texture: "blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                     if temp == CGPoint(x: 100, y: 100) {
                         if priority[2] == upDistance {
-                            temp = moveDown(character: &Blinky, texture: "Blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                            temp = moveDown(character: &Blinky, texture: "blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                             if temp == CGPoint(x: 100, y: 100) {
-                                temp = moveLeft(character: &Blinky, texture: "Blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+                                temp = moveLeft(character: &Blinky, texture: "blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
                                 if temp != CGPoint(x: 100, y: 100) {
                                     BlinkyTile = temp
                                 }

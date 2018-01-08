@@ -21,26 +21,18 @@ class GameScene: SKScene {
     var counter: Int = 0
     var pacmanDirection: Int = 0
     var BlinkyTile: CGPoint = CGPoint(x: 0, y: 0)
-    var pinky = SKSpriteNode(imageNamed: "pinky+left")
     var pacman = SKSpriteNode(imageNamed: "pacman left")
-    let dot: SKSpriteNode = SKSpriteNode(imageNamed: "pellet-1")
+    var Inky = SKSpriteNode(imageNamed: "inky+up")
+    var Blinky = SKSpriteNode(imageNamed: "blinky+left")
    
     override func didMove(to view: SKView) {
-        dot.xScale = 0.325
-        dot.yScale = 0.325
-        self.addChild(dot)
-        //print(allowedTiles.capacity)
-        dot.position = CenterOfTile(tile: allowedTiles[238])
-        
-        pinky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
-        pinky.xScale = 0.3
-        pinky.yScale = 0.3
-         addChild(pinky)
         pacman.position = CenterOfTile(tile: pacmanTile)
         pacman.xScale = 0.325
         pacman.yScale = 0.325
         addChild(pacman)
         addChild(MapNode.Map())
+        addChild(Inky)
+        addChild(Blinky)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -54,8 +46,8 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
-        BlinkyTile = BlinkyNode.Blinky(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection)
-        InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection)
+        BlinkyTile = BlinkyNode.Blinky(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection, Blinky: &Blinky)
+        InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection, Inky: &Inky)
         
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
