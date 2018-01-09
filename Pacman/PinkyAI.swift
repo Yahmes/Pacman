@@ -26,7 +26,8 @@ class pinkyNode: SKSpriteNode {
         var leftPriority = 0
         pinky.xScale = 0.3
         pinky.yScale = 0.3
-      // targeting
+        
+        // targeting
         if pacmanDirection == 1 {
             let target = CenterOfTile(tile: CGPoint(x:pacmanPosition.x - 4 , y: pacmanPosition.y - 4))
         

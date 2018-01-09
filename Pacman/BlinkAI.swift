@@ -32,13 +32,13 @@ class BlinkyNode: SKSpriteNode {
         
         // priority setting
         // up
-        upDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
+        upDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y - 1), 2))
         // down
-        downDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
+        downDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y + 1), 2))
         // left
-        leftDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
+        leftDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x - 1), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
         // right
-        rightDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
+        rightDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x + 1), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y), 2))
         
         func sort (array: inout Array<Double>) {
             let first: Int = 0
@@ -54,6 +54,7 @@ class BlinkyNode: SKSpriteNode {
         sort(array: &priority)
         
         if priority[0] == upDistance {
+            print("working")
             temp = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == downDistance {
@@ -79,6 +80,7 @@ class BlinkyNode: SKSpriteNode {
             }
         }
         if priority[0] == downDistance {
+            print("working down")
             temp = moveDown(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == leftDistance {
@@ -104,6 +106,7 @@ class BlinkyNode: SKSpriteNode {
             }
         }
         if priority[0] == leftDistance {
+            print("working left")
             temp = moveLeft(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == rightDistance {
@@ -129,6 +132,7 @@ class BlinkyNode: SKSpriteNode {
             }
         }
         if priority[0] == rightDistance {
+            print("working right")
             temp = moveRight(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             if temp == CGPoint(x: 100, y: 100) {
                 if priority[1] == leftDistance {
