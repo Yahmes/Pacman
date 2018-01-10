@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class InkyNode: SKSpriteNode {
-    class func Inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int, Inky: inout SKSpriteNode) {
+    class func Inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int, Inky: inout SKSpriteNode) -> CGPoint {
         var InkyTile: CGPoint = CGPoint(x: 12, y: 11)
         var blinkyTarget: CGPoint
         var InkyTarget: CGPoint
@@ -167,6 +167,7 @@ class InkyNode: SKSpriteNode {
                 InkyTile = temp
             }
         }
+        return InkyTile
     }
 }
 
