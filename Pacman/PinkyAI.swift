@@ -12,9 +12,11 @@ import GameplayKit
 
 class pinkyNode: SKSpriteNode {
     class func pinky(pacmanPosition: CGPoint, pacmanDirection: Int) -> SKSpriteNode {
-        let pinky = SKSpriteNode(imageNamed: "pinky+left")
-         pinky.position = CenterOfTile(tile: CGPoint(x: 13, y: 14))
+        var pinky = SKSpriteNode(imageNamed: "pinky+left")
+       var pinkyTile = CGPoint(x: 13, y: 14)
+        pinky.position = CenterOfTile(tile: pinkyTile )
        // variables
+        var PinkySuperArrayPosition: Int = 137
         var target = CenterOfTile(tile: CGPoint(x: 3, y: -3))
         let upDistance = sqrt(pow(Double(target.x - pinky.position.x), 2)) + pow(Double(target.y - pinky.position.y - 1), 2)
         let downDistance = sqrt(pow(Double(target.x - pinky.position.x), 2)) + pow(Double(target.y - pinky.position.y + 1), 2)
@@ -196,6 +198,11 @@ class pinkyNode: SKSpriteNode {
                 }
                 }
             }
+            // movement
+            if upPriority == 1 {
+                pinkyTile = moveUp(character: &pinky, texture: "Pinky+up", tile: pinkyTile, superArrayPosition: &PinkySuperArrayPosition)
+            }
+            
         }
         return pinky
     }
