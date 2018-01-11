@@ -10,9 +10,8 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class BlinkyNode: SKSpriteNode  {
-    class func Blinky(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
-       
+class BlinkyNode: GameScene  {
+    class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
         var BlinkyTile = CGPoint(x: 14, y: 11)
         var BlinkyTarget: CGPoint
         var upDistance: Double = 0
@@ -23,9 +22,6 @@ class BlinkyNode: SKSpriteNode  {
         var temp: CGPoint
         var BlinkysuperArrayPosition: Int = 138
         var priority: Array<Double> = [upDistance, downDistance, leftDistance, rightDistance]
-        Blinky.position = CenterOfTile(tile: BlinkyTile)
-        Blinky.xScale = 0.3
-        Blinky.yScale = 0.3
         
         BlinkyTarget = CGPoint(x: PacmanPosition.x ,y: PacmanPosition.y)
         // priority setting
@@ -59,7 +55,7 @@ class BlinkyNode: SKSpriteNode  {
         }
         sort(array: &priority)
         
-        BlinkyTile = moveRight(character: &Blinky, texture: "blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
+        BlinkyTile = moveRight(character: &Blinky, texture: "blinky+right", tile: CGPoint(x: 14, y: 11), superArrayPosition: &BlinkysuperArrayPosition)
         print("should have moved")
         /*
         if priority[0] == upDistance {
