@@ -20,7 +20,8 @@ class GameScene: SKScene {
     var pacmanSuperArrayPoisition: Int = 218
     var counter: Int = 0
     var pacmanDirection: Int = 0
-    var BlinkyTile: CGPoint = CGPoint(x: 0, y: 0)
+    var BlinkyTile = CGPoint(x: 0, y: 0)
+    var InkyTile = CGPoint(x: 0, y: 0)
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var Blinky = SKSpriteNode(imageNamed: "blinky+left")
@@ -47,7 +48,11 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         
         BlinkyTile = BlinkyNode.Blinky(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection, Blinky: &Blinky)
-        InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection, Inky: &Inky)
+        InkyTile = InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection, Inky: &Inky)
+        
+        if pacmanTile == BlinkyTile || pacmanTile == InkyTile{
+            removeChildren(in: [pacman])
+        }
         
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
@@ -56,7 +61,7 @@ class GameScene: SKScene {
                     //print("up")
                     pacmanDirection = 1
                     temp = pacmanTile
-                    pacmanTile = moveUp(character: &pacman, texture: "pacman up", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y), superArrayPosition: &pacmanSuperArrayPoisition)
+                    pacmanTile = moveUp(character: &pacman, texture: "pacman up", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
                     if CGPoint(x: 100, y: 100) == pacmanTile {
                         pacmanTile = temp
                     }
@@ -66,7 +71,7 @@ class GameScene: SKScene {
                     //print("down")
                     pacmanDirection = 2
                     temp = pacmanTile
-                    pacmanTile = moveDown(character: &pacman, texture: "pacman down", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y), superArrayPosition: &pacmanSuperArrayPoisition)
+                    pacmanTile = moveDown(character: &pacman, texture: "pacman down", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
                     if CGPoint(x: 100, y: 100) == pacmanTile {
                         pacmanTile = temp
                     }
@@ -79,7 +84,7 @@ class GameScene: SKScene {
                     //print("left")
                     pacmanDirection = 3
                     temp = pacmanTile
-                    pacmanTile = moveLeft(character: &pacman, texture: "pacman left", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y), superArrayPosition: &pacmanSuperArrayPoisition)
+                    pacmanTile = moveLeft(character: &pacman, texture: "pacman left", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
                     if CGPoint(x: 100, y: 100) == pacmanTile {
                         pacmanTile = temp
                     }
@@ -89,7 +94,7 @@ class GameScene: SKScene {
                     //print("riht")
                     pacmanDirection = 4
                     temp = pacmanTile
-                    pacmanTile = moveRight(character: &pacman, texture: "pacman right", tile: CGPoint(x: pacmanTile.x ,y: pacmanTile.y), superArrayPosition: &pacmanSuperArrayPoisition)
+                    pacmanTile = moveRight(character: &pacman, texture: "pacman right", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
                     if CGPoint(x: 100, y: 100) == pacmanTile {
                         pacmanTile = temp
                     }
