@@ -27,6 +27,7 @@ class GameScene: SKScene {
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var BlinKy = SKSpriteNode(imageNamed: "blinky+left")
+    // horge was here
     
     override func didMove(to view: SKView) {
         pacman.position = CenterOfTile(tile: pacmanTile)
