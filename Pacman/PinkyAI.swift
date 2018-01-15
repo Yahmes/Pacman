@@ -199,9 +199,7 @@ class pinkyNode: SKSpriteNode {
                 }
             }
             // movement
-            if upPriority == 1 {
-                pinkyTile = moveUp(character: &pinky, texture: "Pinky+up", tile: pinkyTile, superArrayPosition: &PinkySuperArrayPosition)
-            }
+           
             
         }
         return pinky

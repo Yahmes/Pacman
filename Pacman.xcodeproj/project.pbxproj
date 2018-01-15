@@ -12,6 +12,7 @@
 		69324C971FD982050035207F /* Grid Detection X.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69324C961FD982050035207F /* Grid Detection X.swift */; };
 		69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4AE0D1FD19CC300C000E3 /* Map.swift */; };
 		69CBB3861FD6D43100255EFB /* grid detection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CBB3851FD6D43100255EFB /* grid detection.swift */; };
+		A7C58BCB200CE0E900BF7D2F /* Pellets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C58BCA200CE0E900BF7D2F /* Pellets.swift */; };
 		A7E4C5461FDAD18200204062 /* PinkyAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E4C5451FDAD18200204062 /* PinkyAI.swift */; };
 		A7E4C5481FDAD19600204062 /* BlinkAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E4C5471FDAD19600204062 /* BlinkAI.swift */; };
 		A7E4C54A1FDAD1AB00204062 /* InkyAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E4C5491FDAD1AB00204062 /* InkyAI.swift */; };
@@ -37,6 +38,7 @@
 		69324C961FD982050035207F /* Grid Detection X.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grid Detection X.swift"; sourceTree = "<group>"; };
 		69C4AE0D1FD19CC300C000E3 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		69CBB3851FD6D43100255EFB /* grid detection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "grid detection.swift"; sourceTree = "<group>"; };
+		A7C58BCA200CE0E900BF7D2F /* Pellets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pellets.swift; sourceTree = "<group>"; };
 		A7E4C5451FDAD18200204062 /* PinkyAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkyAI.swift; sourceTree = "<group>"; };
 		A7E4C5471FDAD19600204062 /* BlinkAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkAI.swift; sourceTree = "<group>"; };
 		A7E4C5491FDAD1AB00204062 /* InkyAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkyAI.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */,
 				BC6E3A521FC70347004FE3BB /* GameScene.swift */,
+				A7C58BCA200CE0E900BF7D2F /* Pellets.swift */,
 				690C06201FEAA18A00788422 /* Move.swift */,
 				A7E4C5471FDAD19600204062 /* BlinkAI.swift */,
 				A7E4C5451FDAD18200204062 /* PinkyAI.swift */,
@@ -204,6 +207,7 @@
 				69324C971FD982050035207F /* Grid Detection X.swift in Sources */,
 				69C4AE0E1FD19CC300C000E3 /* Map.swift in Sources */,
 				BC6E3A531FC70347004FE3BB /* GameScene.swift in Sources */,
+				A7C58BCB200CE0E900BF7D2F /* Pellets.swift in Sources */,
 				690C06211FEAA18A00788422 /* Move.swift in Sources */,
 				BC6E3A551FC70347004FE3BB /* GameViewController.swift in Sources */,
 				A7E4C5481FDAD19600204062 /* BlinkAI.swift in Sources */,
@@ -351,10 +355,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P9R24Y2CT;
 				INFOPLIST_FILE = Pacman/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "James-Devries.Pacman";
+				PRODUCT_BUNDLE_IDENTIFIER = No.Pacman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -366,10 +371,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P9R24Y2CT;
 				INFOPLIST_FILE = Pacman/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "James-Devries.Pacman";
+				PRODUCT_BUNDLE_IDENTIFIER = No.Pacman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
