@@ -13,6 +13,7 @@ import GameplayKit
 class BlinkyNode: GameScene  {
     class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: SKSpriteNode) -> CGPoint {
         var BlinkyTile = CGPoint(x: 14, y: 11)
+        Blinky.position = CenterOfTile(tile: BlinkyTile)
         var BlinkyTarget: CGPoint
         var upDistance: Double = 0
         var downDistance: Double = 0
