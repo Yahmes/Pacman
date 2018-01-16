@@ -57,7 +57,7 @@ class BlinkyNode: GameScene  {
         sort(array: &priority)
         
         BlinkyTile = moveRight(character: Blinky, texture: "blinky+right", tile: CGPoint(x: 14, y: 11), superArrayPosition: &BlinkysuperArrayPosition)
-        print("should have moved")
+        print(BlinkyTile)
         /*
         if priority[0] == upDistance {
             temp = BlinkyTile
