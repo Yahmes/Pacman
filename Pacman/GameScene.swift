@@ -95,6 +95,7 @@ class GameScene: SKScene {
                 pacmanDirection[1] = pacmanDirectionBackup
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirection[0]
             }
         }
         // DOWN
@@ -107,6 +108,7 @@ class GameScene: SKScene {
                 pacmanDirection[1] = pacmanDirectionBackup
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirection[0]
             }
         }
         // LEFT
@@ -119,6 +121,7 @@ class GameScene: SKScene {
                 pacmanDirection[1] = pacmanDirectionBackup
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirection[0]
             }
         }
         // RIGHT
@@ -131,6 +134,7 @@ class GameScene: SKScene {
                 pacmanDirection[1] = pacmanDirectionBackup
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirection[0]
             }
         }
         counter += 1
