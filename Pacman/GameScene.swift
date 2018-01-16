@@ -18,10 +18,8 @@ class GameScene: SKScene {
     var temp = CGPoint(x: 14 , y: 23)
     var pacmanTile = CGPoint(x: 14, y: 23)
     var pacmanSuperArrayPoisition: Int = 223
-    var pacmanDirection: Int = 1
-    var pacmanDirection2: Int = 1
-    var pacmanDirectionBackup: Int = 1
-    var tempInt: Int = 0
+    var pacmanDirection: Array<Int> = [0,0]
+    var pacmanDirectionBackup: Int = 0
     var BlinkyTile = CGPoint(x: 14, y: 11)
     var InkyTile = CGPoint(x: 0, y: 0)
     var pacman = SKSpriteNode(imageNamed: "pacman left")
@@ -53,8 +51,8 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
-        BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection, Blinky: BlinKy)
-        InkyTile = InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection, Inky: &Inky)
+        BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection[1], Blinky: BlinKy)
+        InkyTile = InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection[1], Inky: &Inky)
         
         if pacmanTile == BlinkyTile || pacmanTile == InkyTile{
             removeChildren(in: [pacman])
@@ -65,12 +63,12 @@ class GameScene: SKScene {
                 // UP
                 if touch.y <= -287 && touch.y >= -384{
                     //print("up")
-                    pacmanDirection = 1
+                    pacmanDirection[1] = 1
                 }
                 // DOWN
                 else if touch.y <= -437 && touch.y >= -515 {
                     //print("down")
-                    pacmanDirection = 2
+                    pacmanDirection[1] = 2
                 }
             }
             
@@ -78,61 +76,61 @@ class GameScene: SKScene {
                 // LEFT
                 if touch.x >= -384 && touch.x <= -309  {
                     //print("left")
-                    pacmanDirection = 3
+                    pacmanDirection[1] = 3
                 }
                 // RIGHT
                 else if touch.x >= -234 && touch.x <= -159  {
                     //print("riht")
-                    pacmanDirection = 4
+                    pacmanDirection[1] = 4
                 }
             }
         }
         // UP
-        if pacmanDirection == 1 {
+        if pacmanDirection[1] == 1 {
             temp = pacmanTile
             pacmanTile = moveUp(character: &pacman, texture: "pacman up", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
             if CGPoint(x: 100, y: 100) == pacmanTile {
                 pacmanTile = temp
-                pacmanDirection = pacmanDirection2
-                pacmanDirection2 = pacmanDirectionBackup
+                pacmanDirection[0] = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirectionBackup
             } else {
-                pacmanDirectionBackup = pacmanDirection
+                pacmanDirectionBackup = pacmanDirection[1]
             }
         }
         // DOWN
-        if pacmanDirection == 2 {
+        if pacmanDirection[1] == 2 {
             temp = pacmanTile
             pacmanTile = moveDown(character: &pacman, texture: "pacman down", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
             if CGPoint(x: 100, y: 100) == pacmanTile {
                 pacmanTile = temp
-                pacmanDirection = pacmanDirection2
-                pacmanDirection2 = pacmanDirectionBackup
+                pacmanDirection[0] = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirectionBackup
             } else {
-                pacmanDirectionBackup = pacmanDirection
+                pacmanDirectionBackup = pacmanDirection[1]
             }
         }
         // LEFT
-        if pacmanDirection == 3 {
+        if pacmanDirection[1] == 3 {
             temp = pacmanTile
             pacmanTile = moveLeft(character: &pacman, texture: "pacman left", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
             if CGPoint(x: 100, y: 100) == pacmanTile {
                 pacmanTile = temp
-                pacmanDirection = pacmanDirection2
-                pacmanDirection2 = pacmanDirectionBackup
+                pacmanDirection[0] = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirectionBackup
             } else {
-                pacmanDirectionBackup = pacmanDirection
+                pacmanDirectionBackup = pacmanDirection[1]
             }
         }
         // RIGHT
-        if pacmanDirection == 4 {
+        if pacmanDirection[1] == 4 {
             temp = pacmanTile
             pacmanTile = moveRight(character: pacman, texture: "pacman right", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
             if CGPoint(x: 100, y: 100) == pacmanTile {
                 pacmanTile = temp
-                pacmanDirection = pacmanDirection2
-                pacmanDirection2 = pacmanDirectionBackup
+                pacmanDirection[0] = pacmanDirection[1]
+                pacmanDirection[1] = pacmanDirectionBackup
             } else {
-                pacmanDirectionBackup = pacmanDirection
+                pacmanDirectionBackup = pacmanDirection[1]
             }
         }
         counter += 1
