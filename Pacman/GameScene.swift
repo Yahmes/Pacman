@@ -21,19 +21,24 @@ class GameScene: SKScene {
     var pacmanDirection: Array<Int> = [0,0]
     var pacmanDirectionBackup: Int = 0
     var BlinkyTile = CGPoint(x: 14, y: 11)
-    var InkyTile = CGPoint(x: 0, y: 0)
+    var InkyTile = CGPoint(x: 12, y: 11)
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var BlinKy = SKSpriteNode(imageNamed: "blinky+left")
-    // horge was here
     
     override func didMove(to view: SKView) {
+        //Creating pacman
         pacman.position = CenterOfTile(tile: pacmanTile)
         pacman.xScale = 0.325
         pacman.yScale = 0.325
+        //Creating Blinky
         BlinKy.position = CenterOfTile(tile: BlinkyTile)
         BlinKy.xScale = 0.3
         BlinKy.yScale = 0.3
+        //Creating Inky
+        Inky.position = CenterOfTile(tile: InkyTile)
+        Inky.xScale = 0.3
+        Inky.yScale = 0.3
         addChild(pacman)
         addChild(MapNode.Map())
         addChild(Inky)
