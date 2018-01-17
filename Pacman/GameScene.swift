@@ -25,7 +25,6 @@ class GameScene: SKScene {
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var BlinKy = SKSpriteNode(imageNamed: "blinky+left")
-    // horge was here
     
     override func didMove(to view: SKView) {
         pacman.position = CenterOfTile(tile: pacmanTile)
@@ -96,7 +95,7 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = 0
+                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         // DOWN
@@ -110,7 +109,7 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = 0
+                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         // LEFT
@@ -124,7 +123,7 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = 0
+                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         // RIGHT
@@ -138,7 +137,7 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = 0
+                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         counter += 1
