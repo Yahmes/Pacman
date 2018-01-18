@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 
 class BlinkyNode: GameScene  {
-    class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: SKSpriteNode) -> CGPoint {
+    class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
         var BlinkyTile = CGPoint(x: 14, y: 11)
         Blinky.position = CenterOfTile(tile: BlinkyTile)
         var BlinkyTarget: CGPoint
@@ -21,7 +21,7 @@ class BlinkyNode: GameScene  {
         var rightDistance: Double = 0
         var direction: Int
         var temp: CGPoint
-        var BlinkysuperArrayPosition: Int = 143
+        var BlinkysuperArrayPosition: Int = 114
         var priority: Array<Double> = [upDistance, downDistance, leftDistance, rightDistance]
         
         BlinkyTarget = CGPoint(x: PacmanPosition.x ,y: PacmanPosition.y)
@@ -56,9 +56,6 @@ class BlinkyNode: GameScene  {
         }
         sort(array: &priority)
         
-        BlinkyTile = moveRight(character: Blinky, texture: "blinky right", tile: CGPoint(x: 14, y: 11), superArrayPosition: &BlinkysuperArrayPosition)
-        print(BlinkyTile)
-        /*
         if priority[0] == upDistance {
             temp = BlinkyTile
             BlinkyTile = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
@@ -168,7 +165,6 @@ class BlinkyNode: GameScene  {
                 }
             }
          }
-        */
         return BlinkyTile
         
     }

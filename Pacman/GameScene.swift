@@ -22,6 +22,7 @@ class GameScene: SKScene {
     var pacmanDirectionBackup: Int = 0
     var BlinkyTile = CGPoint(x: 14, y: 11)
     var InkyTile = CGPoint(x: 0, y: 0)
+    var dot = SKSpriteNode(imageNamed: "pellet-1")
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var BlinKy = SKSpriteNode(imageNamed: "blinky+left")
@@ -33,6 +34,10 @@ class GameScene: SKScene {
         BlinKy.position = CenterOfTile(tile: BlinkyTile)
         BlinKy.xScale = 0.3
         BlinKy.yScale = 0.3
+        dot.position = CenterOfTile(tile: allowedTiles[113])
+        dot.xScale = 0.3
+        dot.yScale = 0.3
+        addChild(dot)
         addChild(pacman)
         addChild(MapNode.Map())
         addChild(Inky)
@@ -50,7 +55,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
-        BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection[1], Blinky: BlinKy)
+        BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection[1], Blinky: &BlinKy)
         InkyTile = InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection[1], Inky: &Inky)
         
         if pacmanTile == BlinkyTile || pacmanTile == InkyTile{
@@ -129,7 +134,7 @@ class GameScene: SKScene {
         // RIGHT
         if pacmanDirection[1] == 4 {
             temp = pacmanTile
-            pacmanTile = moveRight(character: pacman, texture: "pacman right", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
+            pacmanTile = moveRight(character: &pacman, texture: "pacman right", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
             if CGPoint(x: 100, y: 100) == pacmanTile {
                 pacmanTile = temp
                 pacmanDirection[0] = pacmanDirection[1]
