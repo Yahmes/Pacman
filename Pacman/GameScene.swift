@@ -21,12 +21,8 @@ class GameScene: SKScene {
     var pacmanDirection: Array<Int> = [0,0]
     var pacmanDirectionBackup: Int = 0
     var BlinkyTile = CGPoint(x: 14, y: 11)
-<<<<<<< HEAD
-    var InkyTile = CGPoint(x: 0, y: 0)
     var dot = SKSpriteNode(imageNamed: "pellet-1")
-=======
     var InkyTile = CGPoint(x: 12, y: 11)
->>>>>>> 44ea98cf6bb33e486bcd80aa24d7f5a54024a49e
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var BlinKy = SKSpriteNode(imageNamed: "blinky+left")
@@ -40,17 +36,14 @@ class GameScene: SKScene {
         BlinKy.position = CenterOfTile(tile: BlinkyTile)
         BlinKy.xScale = 0.3
         BlinKy.yScale = 0.3
-<<<<<<< HEAD
         dot.position = CenterOfTile(tile: allowedTiles[113])
         dot.xScale = 0.3
         dot.yScale = 0.3
         addChild(dot)
-=======
         //Creating Inky
         Inky.position = CenterOfTile(tile: InkyTile)
         Inky.xScale = 0.3
         Inky.yScale = 0.3
->>>>>>> 44ea98cf6bb33e486bcd80aa24d7f5a54024a49e
         addChild(pacman)
         addChild(MapNode.Map())
         addChild(Inky)
