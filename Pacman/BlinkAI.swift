@@ -11,9 +11,13 @@ import SpriteKit
 import GameplayKit
 
 class BlinkyNode: GameScene  {
+<<<<<<< HEAD
     class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
+=======
+    class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: SKSpriteNode) -> CGPoint {
+       //Blinky's starting tile
+>>>>>>> 44ea98cf6bb33e486bcd80aa24d7f5a54024a49e
         var BlinkyTile = CGPoint(x: 14, y: 11)
-        Blinky.position = CenterOfTile(tile: BlinkyTile)
         var BlinkyTarget: CGPoint
         var upDistance: Double = 0
         var downDistance: Double = 0
@@ -42,7 +46,7 @@ class BlinkyNode: GameScene  {
         priority[1] = downDistance
         priority[2] = leftDistance
         priority[3] = rightDistance
-        
+        // Figure which distance is the shortest
         func sort (array: inout Array<Double>) {
             let first: Int = 0
             let second: Int = 1
@@ -55,7 +59,14 @@ class BlinkyNode: GameScene  {
             }
         }
         sort(array: &priority)
+<<<<<<< HEAD
         
+=======
+        //Test to see if bliky moves at all
+        BlinkyTile = moveRight(character: Blinky, texture: "blinky+right", tile: CGPoint(x: 14, y: 11), superArrayPosition: &BlinkysuperArrayPosition)
+        print(BlinkyTile)
+/*
+>>>>>>> 44ea98cf6bb33e486bcd80aa24d7f5a54024a49e
         if priority[0] == upDistance {
             temp = BlinkyTile
             BlinkyTile = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
@@ -165,6 +176,10 @@ class BlinkyNode: GameScene  {
                 }
             }
          }
+<<<<<<< HEAD
+=======
+    */
+>>>>>>> 44ea98cf6bb33e486bcd80aa24d7f5a54024a49e
         return BlinkyTile
         
     }

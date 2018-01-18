@@ -25,9 +25,7 @@ class InkyNode: SKSpriteNode {
         var temp1: String
         var InkysuperArrayPosition: Int = 112
         var priority: Array<Double> = [upDistance , downDistance , leftDistance , rightDistance]
-        Inky.position = CenterOfTile(tile: InkyTile)
-        Inky.xScale = 0.3
-        Inky.yScale = 0.3
+        
         
         if pacmanDirection == 1 {
             blinkyTarget = CGPoint(x: PacmanPosition.x + 2 ,y: PacmanPosition.y - 2)
