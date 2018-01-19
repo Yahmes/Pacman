@@ -56,7 +56,7 @@ class BlinkyNode: GameScene  {
             }
         }
         sort(array: &priority)
-        
+       // Matt K, ghost movment system
         if upDistance == priority[counter1] {
             temp = BlinkyTile
             BlinkyTile = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)

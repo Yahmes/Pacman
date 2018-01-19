@@ -67,7 +67,7 @@ class InkyNode: SKSpriteNode {
         sort(array: &priority)
         
         sort(array: &priority)
-        
+        // Matt k, ghost movment
         if upDistance == priority[counter1] {
             temp = InkyTile
             InkyTile = moveUp(character: &Inky, texture: "inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
