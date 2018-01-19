@@ -5,7 +5,7 @@
 //  Created by Matthew Murray on 2017-12-08.
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
 //
-// Matthew did all of this and all of the assests
+// Matthew did all of this and all of the assests such as fruit, ghosts, pacman, maze and variations, pellets and sound files
 //control the targeting of pinky and assigning the pririty on which route to take
 import Foundation
 import SpriteKit
