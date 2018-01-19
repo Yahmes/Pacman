@@ -104,6 +104,7 @@
 			children = (
 				BC6E3A4C1FC70347004FE3BB /* AppDelegate.swift */,
 				BC6E3A521FC70347004FE3BB /* GameScene.swift */,
+				69C4AE0D1FD19CC300C000E3 /* Map.swift */,
 				A7C58BCA200CE0E900BF7D2F /* Pellets.swift */,
 				690C06201FEAA18A00788422 /* Move.swift */,
 				A7E4C5471FDAD19600204062 /* BlinkAI.swift */,
@@ -121,7 +122,6 @@
 				BC6E3A591FC70347004FE3BB /* Assets.xcassets */,
 				BC6E3A5B1FC70347004FE3BB /* LaunchScreen.storyboard */,
 				BC6E3A5E1FC70347004FE3BB /* Info.plist */,
-				69C4AE0D1FD19CC300C000E3 /* Map.swift */,
 			);
 			path = Pacman;
 			sourceTree = "<group>";

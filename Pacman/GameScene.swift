@@ -21,7 +21,8 @@ class GameScene: SKScene {
     var pacmanDirection: Array<Int> = [0,0]
     var pacmanDirectionBackup: Int = 0
     var BlinkyTile = CGPoint(x: 14, y: 11)
-    var InkyTile = CGPoint(x: 0, y: 0)
+    var dot = SKSpriteNode(imageNamed: "pellet-1")
+    var InkyTile = CGPoint(x: 12, y: 11)
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var BlinKy = SKSpriteNode(imageNamed: "blinky+left")
@@ -31,16 +32,29 @@ class GameScene: SKScene {
     var Powerpellet = false
 // Matthew did some of this
     override func didMove(to view: SKView) {
+        //Creating pacman
         pacman.position = CenterOfTile(tile: pacmanTile)
         pacman.xScale = 0.325
         pacman.yScale = 0.325
+        //Creating Blinky
         BlinKy.position = CenterOfTile(tile: BlinkyTile)
         BlinKy.xScale = 0.3
         BlinKy.yScale = 0.3
+
         powerPellet.position = CenterOfTile(tile: powerPelletTile)
         powerPellet.xScale = 0.25
         powerPellet.yScale = 0.25
         addChild(powerPellet)
+
+        dot.position = CenterOfTile(tile: allowedTiles[113])
+        dot.xScale = 0.3
+        dot.yScale = 0.3
+        addChild(dot)
+        //Creating Inky
+        Inky.position = CenterOfTile(tile: InkyTile)
+        Inky.xScale = 0.3
+        Inky.yScale = 0.3
+
         addChild(pacman)
         addChild(MapNode.Map())
         addChild(Inky)
@@ -58,7 +72,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
-        BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection[1], Blinky: BlinKy)
+        BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection[1], Blinky: &BlinKy)
         InkyTile = InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection[1], Inky: &Inky)
         // death
       // Matthew worked on this
@@ -66,8 +80,8 @@ class GameScene: SKScene {
     var counter1 = 0
         
          while pacmanTile == InkyTile || pacmanTile == BlinkyTile && Powerpellet == false && counter < 7000{
-         counter1 = counter1 
-        print(counter1)
+         counter1 = counter1 + 1
+        
         }
             
         if counter1 == 1000 {
@@ -139,7 +153,6 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         // DOWN
@@ -153,7 +166,6 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         // LEFT
@@ -167,13 +179,12 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         // RIGHT
         if pacmanDirection[1] == 4 {
             temp = pacmanTile
-            pacmanTile = moveRight(character: pacman, texture: "pacman right", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
+            pacmanTile = moveRight(character: &pacman, texture: "pacman right", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
             if CGPoint(x: 100, y: 100) == pacmanTile {
                 pacmanTile = temp
                 pacmanDirection[0] = pacmanDirection[1]
@@ -181,7 +192,6 @@ class GameScene: SKScene {
             } else {
                 pacmanDirectionBackup = pacmanDirection[1]
                 pacmanDirection[1] = pacmanDirection[0]
-                pacmanDirection[0] = pacmanDirectionBackup
             }
         }
         counter += 1

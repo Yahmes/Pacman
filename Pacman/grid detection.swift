@@ -3,6 +3,8 @@
 //  Pacman
 //
 //  Created by MattK on 2017-12-05.
+//Matthew assisted with this code
+//detects wich part of the grid pacman is in
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
 //
 

@@ -6,6 +6,7 @@
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
 //
 // Matthew did all of this and all of the assests
+//control the targeting of pinky and assigning the pririty on which route to take
 import Foundation
 import SpriteKit
 import GameplayKit

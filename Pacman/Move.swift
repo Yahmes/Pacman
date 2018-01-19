@@ -77,7 +77,7 @@ func moveLeft(character: inout SKSpriteNode, texture: String, tile: CGPoint, sup
     }
     return CGPoint(x: 100,y: 100)
 }
-func moveRight(character: SKSpriteNode, texture: String, tile: CGPoint, superArrayPosition: inout Int) -> CGPoint{
+func moveRight(character: inout SKSpriteNode, texture: String, tile: CGPoint, superArrayPosition: inout Int) -> CGPoint{
     temp = tile
     if superArrayPosition + 1 >= allowedTiles.capacity - 1  {
         UpperCounterLimit =  allowedTiles.capacity - 1
