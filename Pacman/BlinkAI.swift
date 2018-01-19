@@ -9,7 +9,9 @@
 import Foundation
 import SpriteKit
 import GameplayKit
+
 //Matt k, Blinkys ghost AI
+
 class BlinkyNode: GameScene  {
     class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
        //Blinky's starting tile
@@ -27,6 +29,7 @@ class BlinkyNode: GameScene  {
         
         BlinkyTarget = CGPoint(x: PacmanPosition.x ,y: PacmanPosition.y)
         // priority setting
+        
         // up
         upDistance = sqrt(pow(Double(BlinkyTarget.x - BlinkyTile.x), 2 ) + pow(Double(BlinkyTarget.y - BlinkyTile.y - 1), 2))
         
@@ -43,7 +46,9 @@ class BlinkyNode: GameScene  {
         priority[1] = downDistance
         priority[2] = leftDistance
         priority[3] = rightDistance
-        // Figure which distance is the shortest
+        
+        // Figures which distance is the shortest
+        
         func sort (array: inout Array<Double>) {
             let first: Int = 0
             let second: Int = 1
@@ -56,7 +61,9 @@ class BlinkyNode: GameScene  {
             }
         }
         sort(array: &priority)
+        
        // Matt K, ghost movment system
+        
         if upDistance == priority[counter1] {
             temp = BlinkyTile
             BlinkyTile = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)

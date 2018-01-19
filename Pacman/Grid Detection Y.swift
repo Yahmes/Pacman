@@ -10,7 +10,9 @@
 import Foundation
 import SpriteKit
 import GameplayKit
+
 // Matt k, same as grid detection but in y-axis
+
 func GridDetectionY(Y: CGFloat) -> CGFloat {
     
     let gridY: CGFloat = 27.4285714284
