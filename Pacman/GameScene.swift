@@ -8,7 +8,9 @@
 import SpriteKit
 import GameplayKit
 class GameScene: SKScene {
+    
     //Matt K, has all of pacmans code and joins all of the other files together, touch detection for pacman.
+    
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false
@@ -30,8 +32,10 @@ class GameScene: SKScene {
     var powerPellet = SKSpriteNode(imageNamed: "power+pellet")
     var lives = 3
     var Powerpellet = false
-// Matthew did some of this
+    
+    // Matthew did some of this
     //assigns the size of the sprites
+    
     override func didMove(to view: SKView) {
         //Creating pacman
         pacman.position = CenterOfTile(tile: pacmanTile)
@@ -41,25 +45,20 @@ class GameScene: SKScene {
         BlinKy.position = CenterOfTile(tile: BlinkyTile)
         BlinKy.xScale = 0.3
         BlinKy.yScale = 0.3
-
+        //Creating Power Pellet
         powerPellet.position = CenterOfTile(tile: powerPelletTile)
         powerPellet.xScale = 0.25
         powerPellet.yScale = 0.25
-        addChild(powerPellet)
-
-        dot.position = CenterOfTile(tile: allowedTiles[113])
-        dot.xScale = 0.3
-        dot.yScale = 0.3
-        addChild(dot)
         //Creating Inky
         Inky.position = CenterOfTile(tile: InkyTile)
         Inky.xScale = 0.3
         Inky.yScale = 0.3
-
+        // adds the things
         addChild(pacman)
         addChild(MapNode.Map())
         addChild(Inky)
         addChild(BlinKy)
+        addChild(powerPellet)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -68,16 +67,21 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // changes movemnt from continuous to choppy, one you just press botton and it moves, other one you have to keep taping the button to move.
         //isTouched = false
     }
     
     override func update(_ currentTime: TimeInterval) {
         
+        // ghost call
+        
         BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection[1], Blinky: &BlinKy)
         InkyTile = InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection[1], Inky: &Inky)
+        
         // death
-      // Matthew worked on this
+        // Matthew worked on this
         // controls the dying stages of pacman as well as pellet functions below that
+        
     var counter1 = 0
         
          while pacmanTile == InkyTile && Powerpellet == false && counter < 7000 || pacmanTile == BlinkyTile && Powerpellet == false && counter < 7000{
@@ -98,12 +102,11 @@ class GameScene: SKScene {
                 pacman.texture = SKTexture(imageNamed: "pac poof")
             }
         }
-            
-      
         
         // pellets
-       //Matthews Code
+        //Matthews Code
         // changes ghosts texture to the edible texture
+        
         if pacmanTile == powerPelletTile {
             Powerpellet = true
             removeChildren(in: [powerPellet])
@@ -117,7 +120,9 @@ class GameScene: SKScene {
                 removeChildren(in: [Inky])
             }
         }
+        
         // Matt K, pacmans movement system
+        
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
