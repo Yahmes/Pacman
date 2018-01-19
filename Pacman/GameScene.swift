@@ -117,6 +117,7 @@ class GameScene: SKScene {
                 removeChildren(in: [Inky])
             }
         }
+        // Matt K, pacmans movement system
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
