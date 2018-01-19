@@ -3,12 +3,13 @@
 //  Pacman
 //  Created by James Devries on 2017-11-23.
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
-//
+//Matt k is matt k or matt
+//Mathew 
 
 import SpriteKit
 import GameplayKit
 class GameScene: SKScene {
-    
+    //James Started gamescene work
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false

@@ -11,7 +11,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-
+//James helped here 
 func GridDetection(coordinates: CGPoint) -> CGPoint {
     
     var tile: CGPoint = CGPoint(x:0,y:0)
