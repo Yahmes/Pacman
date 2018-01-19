@@ -67,6 +67,10 @@ class InkyNode: SKSpriteNode {
         
         sort(array: &priority)
         
+        if counter == 3 {
+            counter = 0
+        }
+        
         if upDistance == priority[counter] {
             temp = InkyTile
             InkyTile = moveUp(character: &Inky, texture: "inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
