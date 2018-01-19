@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
+//James started here + helped
 //Matt k, Blinkys ghost AI
 class BlinkyNode: GameScene  {
     class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {

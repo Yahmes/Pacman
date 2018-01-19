@@ -8,7 +8,7 @@
 import SpriteKit
 import GameplayKit
 class GameScene: SKScene {
-    
+    //James Started here and helped
     //Matt K, has all of pacmans code and joins all of the other files together, touch detection for pacman.
     
     var touch:CGPoint = CGPoint(x: 0, y:0)
