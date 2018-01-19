@@ -58,6 +58,10 @@ class BlinkyNode: GameScene  {
         }
         sort(array: &priority)
         
+        if counter == 3 {
+            counter = 0
+        }
+        
         if upDistance == priority[counter] {
             temp = BlinkyTile
             BlinkyTile = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
@@ -65,6 +69,8 @@ class BlinkyNode: GameScene  {
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
                 counter += 1
+            } else {
+                counter = 0
             }
         }
         if downDistance == priority[counter] {
@@ -74,6 +80,8 @@ class BlinkyNode: GameScene  {
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
                 counter += 1
+            } else {
+                counter = 0
             }
         }
         if leftDistance == priority[counter] {
@@ -83,6 +91,8 @@ class BlinkyNode: GameScene  {
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
                 counter += 1
+            } else {
+                counter = 0
             }
         }
         if rightDistance == priority[counter] {
@@ -92,6 +102,8 @@ class BlinkyNode: GameScene  {
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
                 counter += 1
+            } else {
+                counter = 0
             }
         }
         
