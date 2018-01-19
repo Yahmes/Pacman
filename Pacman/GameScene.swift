@@ -31,6 +31,7 @@ class GameScene: SKScene {
     var lives = 3
     var Powerpellet = false
 // Matthew did some of this
+    //assigns the size of the sprites
     override func didMove(to view: SKView) {
         //Creating pacman
         pacman.position = CenterOfTile(tile: pacmanTile)
@@ -79,26 +80,26 @@ class GameScene: SKScene {
         // controls the dying stages of pacman as well as pellet functions below that
     var counter1 = 0
         
-         while pacmanTile == InkyTile || pacmanTile == BlinkyTile && Powerpellet == false && counter < 7000{
+         while pacmanTile == InkyTile && Powerpellet == false && counter < 7000 || pacmanTile == BlinkyTile && Powerpellet == false && counter < 7000{
          counter1 = counter1 + 1
-        
+            if counter1 == 1000 {
+                pacman.texture = SKTexture(imageNamed: "pac death 1")
+            }else if counter1 == 2000{
+                pacman.texture = SKTexture(imageNamed: "pac death 2")
+            }else if counter1 == 3000 {
+                pacman.texture = SKTexture(imageNamed: "pac death 3")
+            }else if counter1 == 4000 {
+                pacman.texture = SKTexture(imageNamed: "pac death 4")
+            }else if counter1 == 5000 {
+                pacman.texture = SKTexture(imageNamed: "pac death 5")
+            }else if counter1 == 6000 {
+                pacman.texture = SKTexture(imageNamed: "pac death 6")
+            }else if counter1 == 7000 {
+                pacman.texture = SKTexture(imageNamed: "pac poof")
+            }
         }
             
-        if counter1 == 1000 {
-            pacman.texture = SKTexture(imageNamed: "pac death 1")
-        }else if counter1 == 2000{
-            pacman.texture = SKTexture(imageNamed: "pac death 2")
-        }else if counter1 == 3000 {
-            pacman.texture = SKTexture(imageNamed: "pac death 3")
-        }else if counter1 == 4000 {
-            pacman.texture = SKTexture(imageNamed: "pac death 4")
-        }else if counter1 == 5000 {
-            pacman.texture = SKTexture(imageNamed: "pac death 5")
-        }else if counter1 == 6000 {
-            pacman.texture = SKTexture(imageNamed: "pac death 6")
-        }else if counter1 == 7000 {
-            pacman.texture = SKTexture(imageNamed: "pac poof")
-        }
+      
         
         // pellets
        //Matthews Code
