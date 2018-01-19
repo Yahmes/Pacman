@@ -8,7 +8,7 @@
 import SpriteKit
 import GameplayKit
 class GameScene: SKScene {
-    //Matt, has all of pacmans code and joins all of the other files together, touch detection for pacman.
+    //Matt K, has all of pacmans code and joins all of the other files together, touch detection for pacman.
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false

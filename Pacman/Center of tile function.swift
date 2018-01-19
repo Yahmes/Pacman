@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-//Matt takes in tile and finds the center of it as a pixel coordinate
+//Matt k, takes in tile and finds the center of it as a pixel coordinate
 func CenterOfTile(tile: CGPoint) -> CGPoint {
     
     var tileCenter: CGPoint = CGPoint(x:0,y:0)

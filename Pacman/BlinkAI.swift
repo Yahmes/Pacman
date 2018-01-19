@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-//Matt, Blinkys ghost AI
+//Matt k, Blinkys ghost AI
 class BlinkyNode: GameScene  {
     class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
        //Blinky's starting tile
