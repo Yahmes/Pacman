@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SpriteKit
-
+// Matt, adds maze onto the screen
 class MapNode: SKSpriteNode {
     class func Map() -> MapNode {
         let sprite = MapNode(imageNamed: "blue+maze+fixed")
