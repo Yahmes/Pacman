@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-
+// Matt k, Inkys ghost AI, does targeting and movement for Inky ghost
 class InkyNode: SKSpriteNode {
     class func Inky(PacmanPosition: CGPoint, BlinkyPosition: CGPoint, pacmanDirection: Int, Inky: inout SKSpriteNode) -> CGPoint {
         var InkyTile: CGPoint = CGPoint(x: 12, y: 11)

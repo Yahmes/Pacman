@@ -4,12 +4,12 @@
 //
 //  Created by MattK on 2017-12-01.
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
-//
+//Matthew helped get right maze texture going
 
 import Foundation
 import UIKit
 import SpriteKit
-
+// Matt k, adds maze onto the screen
 class MapNode: SKSpriteNode {
     class func Map() -> MapNode {
         let sprite = MapNode(imageNamed: "blue+maze+fixed")
