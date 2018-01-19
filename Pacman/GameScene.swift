@@ -3,13 +3,12 @@
 //  Pacman
 //  Created by James Devries on 2017-11-23.
 //  Copyright © 2017 Robit-Team  +1. All rights reserved.
-//Matt k is matt k or matt
-//Mathew 
+//
 
 import SpriteKit
 import GameplayKit
 class GameScene: SKScene {
-    //James Started gamescene work
+    //Matt K, has all of pacmans code and joins all of the other files together, touch detection for pacman.
     var touch:CGPoint = CGPoint(x: 0, y:0)
     var i:Int = 0
     var isTouched:Bool = false
@@ -104,6 +103,7 @@ class GameScene: SKScene {
         
         // pellets
        //Matthews Code
+        // changes ghosts texture to the edible texture
         if pacmanTile == powerPelletTile {
             Powerpellet = true
             removeChildren(in: [powerPellet])
@@ -146,6 +146,7 @@ class GameScene: SKScene {
             }
         }
         // UP
+        //Matthew helped with turning memory
         if pacmanDirection[1] == 1 {
             temp = pacmanTile
             pacmanTile = moveUp(character: &pacman, texture: "pacman up", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
