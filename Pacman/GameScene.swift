@@ -103,6 +103,7 @@ class GameScene: SKScene {
         
         // pellets
        //Matthews Code
+        // changes ghosts texture to the edible texture
         if pacmanTile == powerPelletTile {
             Powerpellet = true
             removeChildren(in: [powerPellet])
@@ -144,6 +145,7 @@ class GameScene: SKScene {
             }
         }
         // UP
+        //Matthew helped with turning memory
         if pacmanDirection[1] == 1 {
             temp = pacmanTile
             pacmanTile = moveUp(character: &pacman, texture: "pacman up", tile: pacmanTile, superArrayPosition: &pacmanSuperArrayPoisition)
