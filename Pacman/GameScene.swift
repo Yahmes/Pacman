@@ -25,7 +25,11 @@ class GameScene: SKScene {
     var pacman = SKSpriteNode(imageNamed: "pacman left")
     var Inky = SKSpriteNode(imageNamed: "inky+up")
     var BlinKy = SKSpriteNode(imageNamed: "blinky+left")
-    
+    var powerPelletTile = CGPoint(x: 1, y: 3)
+    var powerPellet = SKSpriteNode(imageNamed: "power+pellet")
+    var lives = 3
+    var Powerpellet = false
+// Matthew did some of this
     override func didMove(to view: SKView) {
         pacman.position = CenterOfTile(tile: pacmanTile)
         pacman.xScale = 0.325
@@ -33,6 +37,10 @@ class GameScene: SKScene {
         BlinKy.position = CenterOfTile(tile: BlinkyTile)
         BlinKy.xScale = 0.3
         BlinKy.yScale = 0.3
+        powerPellet.position = CenterOfTile(tile: powerPelletTile)
+        powerPellet.xScale = 0.25
+        powerPellet.yScale = 0.25
+        addChild(powerPellet)
         addChild(pacman)
         addChild(MapNode.Map())
         addChild(Inky)
@@ -52,11 +60,47 @@ class GameScene: SKScene {
         
         BlinkyTile = BlinkyNode.BlinkyAI(PacmanPosition: pacmanTile, pacmanDirection: pacmanDirection[1], Blinky: BlinKy)
         InkyTile = InkyNode.Inky(PacmanPosition: pacmanTile, BlinkyPosition: BlinkyTile, pacmanDirection: pacmanDirection[1], Inky: &Inky)
+        // death
+      // Matthew worked on this
+        // controls the dying stages of pacman as well as pellet functions below that
+    var counter1 = 0
         
-        if pacmanTile == BlinkyTile || pacmanTile == InkyTile{
-            removeChildren(in: [pacman])
+         while pacmanTile == InkyTile || pacmanTile == BlinkyTile && Powerpellet == false && counter < 7000{
+         counter1 = counter1 
+        print(counter1)
+        }
+            
+        if counter1 == 1000 {
+            pacman.texture = SKTexture(imageNamed: "pac death 1")
+        }else if counter1 == 2000{
+            pacman.texture = SKTexture(imageNamed: "pac death 2")
+        }else if counter1 == 3000 {
+            pacman.texture = SKTexture(imageNamed: "pac death 3")
+        }else if counter1 == 4000 {
+            pacman.texture = SKTexture(imageNamed: "pac death 4")
+        }else if counter1 == 5000 {
+            pacman.texture = SKTexture(imageNamed: "pac death 5")
+        }else if counter1 == 6000 {
+            pacman.texture = SKTexture(imageNamed: "pac death 6")
+        }else if counter1 == 7000 {
+            pacman.texture = SKTexture(imageNamed: "pac poof")
         }
         
+        // pellets
+       //Matthews Code
+        if pacmanTile == powerPelletTile {
+            Powerpellet = true
+            removeChildren(in: [powerPellet])
+            
+            BlinKy.texture = SKTexture(imageNamed: "edible Blue")
+            Inky.texture = SKTexture(imageNamed: "edible Blue")
+            if pacmanTile == BlinkyTile && Powerpellet == true {
+                removeChildren(in: [BlinKy])
+            }
+            if pacmanTile == InkyTile && Powerpellet == true {
+                removeChildren(in: [Inky])
+            }
+        }
         if isTouched == true {
             if touch.x >= -309 && touch.x <= -234  {
                 // UP
