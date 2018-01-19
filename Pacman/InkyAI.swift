@@ -25,6 +25,7 @@ class InkyNode: SKSpriteNode {
         var temp1: String
         var InkysuperArrayPosition: Int = 112
         var priority: Array<Double> = [upDistance , downDistance , leftDistance , rightDistance]
+        var counter1: Int = 0
         
         
         if pacmanDirection == 1 {
@@ -67,52 +68,48 @@ class InkyNode: SKSpriteNode {
         
         sort(array: &priority)
         
-        if counter == 3 {
-            counter = 0
-        }
-        
-        if upDistance == priority[counter] {
+        if upDistance == priority[counter1] {
             temp = InkyTile
             InkyTile = moveUp(character: &Inky, texture: "inky+up", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             print("up1")
             if InkyTile == CGPoint(x: 100, y: 100) {
                 InkyTile = temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
-        if downDistance == priority[counter] {
+        if downDistance == priority[counter1] {
             temp = InkyTile
             InkyTile = moveDown(character: &Inky, texture: "inky+down", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             print("Down1")
             if InkyTile == CGPoint(x: 100, y: 100) {
                 InkyTile = temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
-        if leftDistance == priority[counter] {
+        if leftDistance == priority[counter1] {
             temp = InkyTile
             InkyTile = moveLeft(character: &Inky, texture: "inky+left", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             print("left1")
             if InkyTile == CGPoint(x: 100, y: 100) {
                 InkyTile =  temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
-        if rightDistance == priority[counter] {
+        if rightDistance == priority[counter1] {
             temp = InkyTile
             InkyTile = moveRight(character: &Inky, texture: "inky+right", tile: InkyTile, superArrayPosition: &InkysuperArrayPosition)
             print("right1")
             if InkyTile == CGPoint(x: 100, y: 100) {
                 InkyTile = temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
         return InkyTile

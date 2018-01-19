@@ -23,7 +23,7 @@ class BlinkyNode: GameScene  {
         var temp: CGPoint
         var BlinkysuperArrayPosition: Int = 114
         var priority: Array<Double> = [upDistance, downDistance, leftDistance, rightDistance]
-        var counter: Int = 0
+        var counter1: Int = 0
         
         BlinkyTarget = CGPoint(x: PacmanPosition.x ,y: PacmanPosition.y)
         // priority setting
@@ -56,53 +56,49 @@ class BlinkyNode: GameScene  {
             }
         }
         sort(array: &priority)
-    
-        if counter == 3 {
-            counter = 0
-        }
         
-        if upDistance == priority[counter] {
+        if upDistance == priority[counter1] {
             temp = BlinkyTile
             BlinkyTile = moveUp(character: &Blinky, texture: "blinky+up", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             print("up1")
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
-        if downDistance == priority[counter] {
+        if downDistance == priority[counter1] {
             temp = BlinkyTile
             BlinkyTile = moveDown(character: &Blinky, texture: "blinky+down", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             print("Down1")
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
-        if leftDistance == priority[counter] {
+        if leftDistance == priority[counter1] {
             temp = BlinkyTile
             BlinkyTile = moveLeft(character: &Blinky, texture: "blinky+left", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             print("left1")
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
-        if rightDistance == priority[counter] {
+        if rightDistance == priority[counter1] {
             temp = BlinkyTile
             BlinkyTile = moveRight(character: &Blinky, texture: "blinky+right", tile: BlinkyTile, superArrayPosition: &BlinkysuperArrayPosition)
             print("right1")
             if BlinkyTile == CGPoint(x: 100, y: 100) {
                 BlinkyTile = temp
-                counter += 1
+                counter1 += 1
             } else {
-                counter = 0
+                counter1 = 0
             }
         }
         
