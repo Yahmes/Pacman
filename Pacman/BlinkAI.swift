@@ -9,9 +9,10 @@
 import Foundation
 import SpriteKit
 import GameplayKit
-//Matt k, Blinkys ghost AI
+//James helped here
 class BlinkyNode: GameScene  {
     class func BlinkyAI(PacmanPosition: CGPoint, pacmanDirection: Int, Blinky: inout SKSpriteNode) -> CGPoint {
+        
        //Blinky's starting tile
         var BlinkyTile = CGPoint(x: 14, y: 11)
         var BlinkyTarget: CGPoint
@@ -56,7 +57,7 @@ class BlinkyNode: GameScene  {
             }
         }
         sort(array: &priority)
-    
+        
         if counter == 3 {
             counter = 0
         }

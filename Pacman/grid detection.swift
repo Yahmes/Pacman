@@ -11,7 +11,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-// Matt k, takes in coordinates and converts it into a tile for our tile based movement. 
+//James helped here 
 func GridDetection(coordinates: CGPoint) -> CGPoint {
     
     var tile: CGPoint = CGPoint(x:0,y:0)
